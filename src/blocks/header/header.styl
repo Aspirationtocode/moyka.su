@@ -2,3 +2,65 @@
 	height 900px
 	image-bg("header-bg.png")
 	position relative
+	@media screen and (max-width: 740px)
+		height 600px
+
+	&-location-wrapper
+		display flex
+		justify-content flex-end
+		margin-top 20px
+		margin-right 20px
+		margin-left 20px
+
+		@media screen and (max-width: 740px)
+			justify-content center
+
+	&-location
+		opacity 0
+		transform translateY(20px)
+		transition ease .6s
+		transition-property transform opacity
+		@media screen and (max-width: 740px)
+			text-align center
+
+		&.animated
+			transform translateY(0px)
+			opacity 1
+
+		&__text
+			font-family RobotoCondensedLight
+			font-size 34px
+			color #fff
+
+			@media screen and (max-width: 1200px)
+				font-size 26px
+			@media screen and (max-width: 740px)
+				text-align center
+				font-size 28px
+				margin-bottom 4px
+
+		&__button
+			background-color #939393
+			border none
+			display inline-block
+			border-radius 30px
+			padding 12px 15px
+			color #fff
+			margin-top 7px
+			float right
+			transition all ease .2s
+			font-family RobotoCondensedRegular
+			text-transform uppercase
+			outline none
+			line-height .8
+
+			@media screen and (max-width: 740px)
+				float none
+				padding 14px 18px
+				font-size 18px
+				border 2px solid #fff
+
+			&:hover
+				cursor pointer
+				background-color #fff
+				color $main-dark-color

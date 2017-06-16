@@ -1,4 +1,15 @@
 include ../header-nav/header-nav
-mixin header()
+include ../header-cars/header-cars
+include ../header-footer/header-footer
+mixin header(activePage)
 	HEADER.header
-		+header-nav()
+		+header-cars()
+		+header-nav(activePage)
+		.header-location-wrapper
+			.header-location
+				.header-location__text
+					| Мы находимся по адресу:
+					br
+					| г.Москва г.Троицк Калужское шоссе д. 38
+				BUTTON.header-location__button Посмотреть на карте
+		+header-footer()

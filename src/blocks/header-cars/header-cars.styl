@@ -1,0 +1,43 @@
+.header-cars
+	pointer-events none
+	position absolute
+	top -5%
+	left 0
+	width 100%
+	height 100%
+
+	@media screen and (max-width: 1600px)
+		top 5%
+
+	@media screen and (max-width: 1260px)
+		top 11%
+
+	@media screen and (max-width: 960px)
+		top 16%
+
+	@media screen and (max-width: 740px)
+		display none
+
+	&__element
+		position absolute
+		top 15%
+		left 5%
+		height 100%
+		width 90%
+		background-repeat no-repeat
+		opacity 0
+		@media screen and (max-width: 1200px)
+			width 100%
+			left 0
+
+		&.animated
+			opacity 1
+			transition opacity ease .8s
+
+		&--before
+			image-bg("before-car.png")
+			background-size 100% auto
+
+		&--after
+			image-bg("after-car.png")
+			background-size 100% auto

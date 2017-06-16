@@ -1,4 +1,4 @@
-mixin header-nav()
+mixin header-nav(activePage)
 	- const menuElements = [
 	-	{level1: 'О нас', level2: ['О нас', 'Видео', 'Статьи']},
 	-	{level1: 'Услуги', level2: ['мойка авто', 'наномойка', 'химчистка салона', 'устранение запаха в салоне']},
@@ -12,18 +12,18 @@ mixin header-nav()
 	- ]
 	.header-nav-overlay
 	.header-nav-mobile
-		.header-nav-mobile__header Мойка.su
+		.header-nav-mobile__logo
 		.header-nav-mobile__burger
 	NAV.header-nav-wrapper
 		UL.header-nav
 			each firstMenu, index in menuElements
 				- if (firstMenu.level2)
-					LI(class=`header-nav__element header-nav__element--${index+1}s header-nav__element--with-dot`)
-						A(href="http://vk.com").header-nav__link= firstMenu.level1
+					LI(class=`header-nav__element header-nav__element--${index+1}s header-nav__element--with-dot ${(activePage === firstMenu.level1) ? "header-nav__element--active-page" : ""}`)
+						A(href="#").header-nav__link= firstMenu.level1
 						UL(class=`header-nav-dropdown header-nav-dropdown--${index + 1}s`)
 							each secondMenu, index in firstMenu.level2
 								LI.header-nav-dropdown__element
-									A(href="http://vk.com").header-nav-dropdown__link= secondMenu
+									A(href="#").header-nav-dropdown__link= secondMenu
 				- else
 					LI.header-nav__element
-						A(href="http://vk.com").header-nav__link= firstMenu.level1
+						A(href="#").header-nav__link= firstMenu.level1
