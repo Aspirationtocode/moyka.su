@@ -1,0 +1,29 @@
+mixin header-nav()
+	- const menuElements = [
+	-	{level1: 'О нас', level2: ['О нас', 'Видео', 'Статьи']},
+	-	{level1: 'Услуги', level2: ['мойка авто', 'наномойка', 'химчистка салона', 'устранение запаха в салоне']},
+	-	{level1: 'Цены', level2: ['Калькулятор цен', 'Прайс-лист', 'Автоклубам']},
+	-	{level1: 'Скидки и акции', level2: ['Скидки и акции', 'Первое посещение', 'Клубная карта', 'Накопления', 'Получить клубную карту']},
+	-	{level1: 'Партнеры'},
+	-	{level1: 'Вакансии'},
+	-	{level1: 'Галерея'},
+	-	{level1: 'Отзывы'},
+	-	{level1: 'Контакты'}
+	- ]
+	.header-nav-overlay
+	.header-nav-mobile
+		.header-nav-mobile__header Мойка.su
+		.header-nav-mobile__burger
+	NAV.header-nav-wrapper
+		UL.header-nav
+			each firstMenu, index in menuElements
+				- if (firstMenu.level2)
+					LI(class=`header-nav__element header-nav__element--${index+1}s header-nav__element--with-dot`)
+						A(href="http://vk.com").header-nav__link= firstMenu.level1
+						UL(class=`header-nav-dropdown header-nav-dropdown--${index + 1}s`)
+							each secondMenu, index in firstMenu.level2
+								LI.header-nav-dropdown__element
+									A(href="http://vk.com").header-nav-dropdown__link= secondMenu
+				- else
+					LI.header-nav__element
+						A(href="http://vk.com").header-nav__link= firstMenu.level1
