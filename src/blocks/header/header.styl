@@ -16,8 +16,9 @@
 			justify-content center
 
 	&-location
-		opacity 0
-		transform translateY(20px)
+		@media screen and (min-width: 740px)
+			opacity 0
+			transform translateY(20px)
 		transition ease .6s
 		transition-property transform opacity
 		@media screen and (max-width: 740px)

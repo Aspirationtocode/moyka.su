@@ -6,9 +6,10 @@ export default function initHeaderNav() {
   const headerNavOverlay = $('.header-nav-overlay');
   const headerNavWrapper = $('.header-nav-wrapper');
 
-  burger.on('click', (event) => {
+  burger.on('click', function () {
     headerNavWrapper.toggleClass('header-nav-wrapper--mobile');
     headerNavOverlay.toggleClass('active');
+    $(this).toggleClass('header-nav-mobile__burger--close');
   });
 
   $(window).on('resize', (event) => {
