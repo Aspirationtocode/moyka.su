@@ -1,0 +1,10 @@
+mixin skill(header, text, sum, imageModificator)
+	.skill
+		.skill__header= header
+			.skill-header-helper.skill-header-helper--left
+			.skill-header-helper.skill-header-helper--right
+		.skill__text= text
+		DIV(class=`skill-image skill-image--${imageModificator}`)
+		.skill-info
+			.skill-info__sum От #{sum} ₽
+			BUTTON.skill-info__button Подробнее

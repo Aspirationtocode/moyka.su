@@ -1,0 +1,29 @@
+.main-subheader
+	display flex
+	justify-content flex-start
+	background-color alpha(#2EBBDF, 10%)
+	width 50%
+	margin-left calc(50% + 60px)
+	padding 6px 40px
+	border 2px solid $main-color
+	border-radius 46px
+	margin-bottom 40px
+
+	@media screen and (max-width: 800px)
+		width 60%
+		margin-left calc(40% + 60px)
+		padding 6px 250px
+
+	@media screen and (max-width: 800px)
+		width 80%
+		margin-left calc(20% + 60px)
+		padding 6px 15px
+
+	&__text
+		color $main-color
+		font-size 33px
+		text-transform uppercase
+		font-family RobotoCondensedRegular
+		text-shadow 0px 3px 6px alpha(#000, 16%)
+		@media screen and (max-width: 800px)
+			font-size 20px
