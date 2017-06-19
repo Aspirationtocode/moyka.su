@@ -17,7 +17,9 @@
     "autoprefixer-loader": "^3.2.0",
     "babel-core": "^6.24.0",
     "babel-loader": "^6.4.1",
+    "babel-plugin-uglify": "^1.0.2",
     "babel-preset-env": "^1.2.2",
+    "babili-webpack-plugin": "^0.1.1",
     "cross-env": "^3.2.4",
     "css-loader": "^0.27.3",
     "css-sourcemaps-webpack-plugin": "^1.0.3",
@@ -36,8 +38,9 @@
     "stylus": "^0.54.5",
     "stylus-loader": "^3.0.1",
     "viewport-js": "^1.0.0",
-    "webpack": "^2.3.1",
-    "webpack-dev-server": "^2.4.2"
+    "webpack": "git+https://github.com/fulls1z3/webpack.git",
+    "webpack-dev-server": "^2.4.2",
+    "webpack-obfuscator": "^0.9.3"
   },
   "browsers": {
     "android": 4,
