@@ -39,4 +39,13 @@ export default function initHeaderNav() {
       );
     },
   );
+
+  $('.header-nav').hover(
+    () => {
+      $('.header-logo').addClass('opacitied');
+    },
+    () => {
+      $('.header-logo').removeClass('opacitied');
+    },
+  );
 }

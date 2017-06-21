@@ -14,16 +14,16 @@ mixin header-nav(activePage)
 	.header-nav-mobile
 		.header-nav-mobile__logo
 		.header-nav-mobile__burger
-	NAV.header-nav-wrapper
-		UL.header-nav
+	nav.header-nav-wrapper
+		ul.header-nav
 			each firstMenu, index in menuElements
 				- if (firstMenu.level2)
-					LI(class=`header-nav__element header-nav__element--${index+1}s header-nav__element--with-dot ${(activePage === firstMenu.level1) ? "header-nav__element--active-page" : ""}`)
+					li(class=`header-nav__element header-nav__element--${index+1}s header-nav__element--with-dot ${(activePage === firstMenu.level1) ? "header-nav__element--active-page" : ""}`)
 						A(href="#").header-nav__link= firstMenu.level1
-						UL(class=`header-nav-dropdown header-nav-dropdown--${index + 1}s`)
+						ul(class=`header-nav-dropdown header-nav-dropdown--${index + 1}s`)
 							each secondMenu, index in firstMenu.level2
-								LI.header-nav-dropdown__element
-									A(href="#").header-nav-dropdown__link= secondMenu
+								li.header-nav-dropdown__element
+									a(href="#").header-nav-dropdown__link= secondMenu
 				- else
-					LI.header-nav__element
-						A(href="#").header-nav__link= firstMenu.level1
+					li.header-nav__element
+						a(href="#").header-nav__link= firstMenu.level1
