@@ -4,7 +4,9 @@ include ../header-footer/header-footer
 mixin header(activePage)
 	header.header
 		+header-cars()
+		.header__appear
 		+header-nav(activePage)
+		+header-footer()
 		.header-location-wrapper
 			.header-logo
 			.header-location
@@ -12,5 +14,6 @@ mixin header(activePage)
 					| Мы находимся по адресу:
 					br
 					| г.Москва г.Троицк Калужское шоссе д. 38
-				button.header-location__button Посмотреть на карте
-		+header-footer()
+				button.header-location__button Показать на карте
+				.header-location__map
+					iframe(src='https://www.google.com/maps/embed?pb=!1m0!4v1498400277817!6m8!1m7!1sUXG73KqUDfTIBOptK19BZg!2m2!1d55.49507073415599!2d37.32906732417598!3f157.48347368765772!4f-2.0965649524616197!5f1.0755731964520003', width='100%', height='100%', frameborder='0', style='border: none', allowfullscreen='')

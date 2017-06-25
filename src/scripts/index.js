@@ -1,29 +1,10 @@
 import '../views/index.pug';
 import '../styles/main.styl';
 import $ from 'jquery';
+import fastclick from 'fastclick';
 import initHeaderNav from './modules/init-header-nav';
+import initHeaderElements from './modules/init-header-elements';
 
+fastclick.attach(document.body);
 initHeaderNav();
-
-const beforeCar = $('.header-cars__element--before');
-const afterCar = $('.header-cars__element--after');
-const headerLocation = $('.header-location');
-const headerLogo = $('.header-logo');
-
-animate(beforeCar, 1000);
-animate(headerLocation, 1000);
-animate(headerLogo, 1000);
-animate(afterCar, 2000);
-
-function animate(element, timeout) {
-  if (timeout) {
-    setTimeout(
-      () => {
-        element.addClass('animated');
-      },
-      timeout,
-    );
-  } else {
-    element.addClass('animated');
-  }
-}
+initHeaderElements();

@@ -5,6 +5,8 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const browsers = require('./package').browsers;
 
+const isProd = process.env.NODE_ENV === 'production';
+
 const autoprefixerBrowsers = [
   `Android >= ${browsers.android}`,
   `Chrome >= ${browsers.chrome}`,
@@ -18,10 +20,42 @@ const autoprefixerBrowsers = [
 const autoprefixerLoader = `autoprefixer-loader?{browsers:[${autoprefixerBrowsers}]}`;
 const cssLoaders = ['style-loader', 'css-loader', autoprefixerLoader, 'stylus-loader'];
 
+const imageOptimizeConfig = [
+  'file-loader?name=[name].[ext]&outputPath=images/',
+  {
+    loader: 'image-webpack-loader',
+    query: {
+      mozjpeg: {
+        quality: 65,
+      },
+      pngquant: {
+        quality: '60-90',
+        speed: 4,
+      },
+      svgo: {
+        plugins: [
+          {
+            removeViewBox: false,
+          },
+          {
+            removeEmptyAttrs: false,
+          },
+        ],
+      },
+      gifsicle: {
+        optimizationLevel: 7,
+        interlaced: false,
+      },
+      optipng: {
+        optimizationLevel: 7,
+        interlaced: false,
+      },
+    },
+  },
+];
+
 const dist = path.join(__dirname, 'dist');
 const src = path.join(__dirname, 'src');
-
-const isProd = process.env.NODE_ENV === 'production';
 
 const devCss = cssLoaders;
 const prodCss = ExtractTextPlugin.extract({
@@ -57,7 +91,7 @@ module.exports = {
       },
       {
         test: /\.(jpg|png|svg)$/,
-        use: 'file-loader?name=[name].[ext]&outputPath=images/',
+        use: isProd ? imageOptimizeConfig : imageOptimizeConfig.slice(0, 1),
       },
       {
         test: /\.(eot|ttf|woff|woff2)$/,

@@ -19,11 +19,11 @@ mixin header-nav(activePage)
 			each firstMenu, index in menuElements
 				- if (firstMenu.level2)
 					li(class=`header-nav__element header-nav__element--${index+1}s header-nav__element--with-dot ${(activePage === firstMenu.level1) ? "header-nav__element--active-page" : ""}`)
-						A(href="#").header-nav__link= firstMenu.level1
+						A(href="http://vk.com").header-nav__link= firstMenu.level1
 						ul(class=`header-nav-dropdown header-nav-dropdown--${index + 1}s`)
 							each secondMenu, index in firstMenu.level2
 								li.header-nav-dropdown__element
-									a(href="#").header-nav-dropdown__link= secondMenu
+									a(href="http://vk.com").header-nav-dropdown__link= secondMenu
 				- else
 					li.header-nav__element
-						a(href="#").header-nav__link= firstMenu.level1
+						a(href="http://vk.com").header-nav__link= firstMenu.level1
