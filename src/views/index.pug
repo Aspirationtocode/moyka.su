@@ -2,13 +2,14 @@ include ../blocks/header/header
 include ../blocks/section-skills/section-skills
 include ../blocks/section-go-calculator/section-go-calculator
 include ../blocks/footer/footer
+- const {menuElements, title} = htmlWebpackPlugin.options;
 doctype html
 html(lang='ru')
 	include ./_head
-	title= title || 'Мойка.su'
-	body
+	title= title
+	body.index-page
 		block content
-		+header("Услуги", htmlWebpackPlugin.options.menuElements)
+		+header("Услуги", menuElements)
 		+section-skills()
 		+section-go-calculator()
-		+footer(htmlWebpackPlugin.options.menuElements)
+		+footer(menuElements)

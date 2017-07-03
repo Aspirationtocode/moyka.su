@@ -66,7 +66,6 @@ const prodCss = ExtractTextPlugin.extract({
 });
 
 const configCss = isProd ? prodCss : devCss;
-const sourcemap = isProd ? false : 'source-map';
 
 module.exports = {
   context: src,
@@ -101,7 +100,6 @@ module.exports = {
       },
     ],
   },
-  devtool: sourcemap,
   devServer: {
     contentBase: dist,
     compress: true,
@@ -117,12 +115,18 @@ module.exports = {
       hash: true,
       filename: 'index.html',
     }),
+    new HtmlWebpackPlugin({
+      title: 'Калькулятор услуг',
+      menuElements: templateData.menuElements,
+      template: path.resolve('src/views/service-calculator.pug'),
+      hash: true,
+      filename: 'service-calculator.html',
+    }),
     new ExtractTextPlugin({
       filename: 'bundle.css',
       disable: isProd,
       allChunks: true,
     }),
-    new CssSourcemapPlugin({ disable: isProd }),
     new webpack.HotModuleReplacementPlugin(),
     new webpack.NamedModulesPlugin(),
   ],

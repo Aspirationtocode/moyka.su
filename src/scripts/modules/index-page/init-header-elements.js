@@ -1,5 +1,5 @@
 import $ from 'jquery';
-import { animate } from '../helpers';
+import { animate } from '../../helpers';
 export default function initHeaderElements() {
   const beforeCar = $('.header-cars__element--before');
   const afterCar = $('.header-cars__element--after');
