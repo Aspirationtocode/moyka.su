@@ -1,0 +1,186 @@
+.footer
+	margin-top 60px
+	section-padding()
+	background linear-gradient(330deg, alpha(#105567, 31%) 0%, #808080 100%)
+	display flex
+	@media screen and (max-width: 900px)
+		flex-direction column
+		padding-bottom 30px
+		padding-top 30px
+
+
+	&-part
+		&--left
+			width 50%
+			@media screen and (max-width: 900px)
+				width 100%
+
+		&--right
+			width 50%
+			display flex
+			flex-direction column
+			align-items flex-end
+			justify-content space-between
+			@media screen and (max-width: 900px)
+				width 100%
+				height 250px
+				align-items center
+
+	&-nav
+		display flex
+		flex-direction column
+		flex-wrap wrap
+		align-content flex-start
+		height 176px
+		@media screen and (max-width: 600px)
+			height 200px
+		&__element
+			color #fff
+			margin-bottom 10px
+			margin-right 10%
+
+
+			&:nth-child(6)
+				margin-right 0
+			&:nth-child(7)
+				margin-right 0
+			&:nth-child(8)
+				margin-right 0
+			&:nth-child(9)
+				margin-right 0
+
+		&__link
+			position relative
+			color #fff
+			font-family RobotoCondensedBold
+			text-transform uppercase
+			font-size 22px
+
+			@media screen and (max-width: 620px)
+				font-size 20px
+
+			@media screen and (max-width: 420px)
+				font-size 16px
+
+			&::after
+				content ""
+				position absolute
+				bottom -1px
+				left 0
+				width 100%
+				height 2px
+				background-color #fff
+				width 0%
+				opacity 0
+				transition ease .2s
+
+			&:hover
+				&::after
+					width 100%
+					opacity 1
+
+	&-map
+		box-sizing border-box
+		position absolute
+		height 200px
+		width 100%
+		top 0
+		left 0
+		display flex
+
+	&-telephone
+		margin-top 30px
+		margin-right 20px
+		display flex
+		align-items flex-end
+		@media screen and (max-width: 900px)
+			margin 20px 0
+		&__icon
+			image-bg("icons/telephone.svg")
+			size(40px)
+			margin-right 5px
+
+			@media screen and (max-width: 740px)
+				size(30px)
+
+		&__number
+			white-space nowrap
+			font-family RobotoCondensedRegular
+			font-size 28px
+			color #fff
+			@media screen and (max-width: 800px)
+				font-size 22px
+
+	&-go-calculator
+		display flex
+		align-items center
+		background-color alpha(#3A5974, 36%)
+		padding 12px
+		border-radius 2px
+		transition ease .2s
+
+		&:hover
+			background-color #fff
+			.footer-go-calculator__text
+				color #3A5974
+			.footer-go-calculator__icon
+				image-bg("icons/calculator-dark.svg")
+				background-size 100% 100%
+
+		&__text
+			text-align right
+			margin-right 3px
+			font-family RobotoCondensedBold
+			font-size 18px
+			color #fff
+			text-transform uppercase
+			line-height 1.18
+			white-space nowrap
+
+		&__icon
+			size(35px, 40px)
+			image-bg("icons/calculator.svg")
+			background-size 100% 100%
+
+	&-time
+		display flex
+		align-items center
+		justify-content space-between
+		&__text
+			text-transform uppercase
+			color #fff
+			font-size 20px
+			font-size RobotoCondensedBold
+			margin-right 10px
+		&__icon
+			size(36px)
+			image-bg("h24.png")
+
+	&-social
+		display flex
+		align-items center
+		&__icon
+			size(36px)
+			&--instagram
+				image-bg("icons/instagram.svg")
+				margin-right 10px
+			&--vk
+				image-bg("icons/vk.svg")
+	&-rights
+		color #fff
+		font-size 20px
+		text-align right
+		@media screen and (max-width: 900px)
+			text-align center
+
+	&-creator-info
+		display flex
+		color #fff
+		font-size 20px
+
+		&__text
+			margin-right 3px
+
+		&__link
+			color #fff
+			font-family RobotoCondensedBold

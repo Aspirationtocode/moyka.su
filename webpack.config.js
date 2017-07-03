@@ -5,6 +5,8 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const browsers = require('./package').browsers;
 
+const templateData = require('./src/data');
+
 const isProd = process.env.NODE_ENV === 'production';
 
 const autoprefixerBrowsers = [
@@ -109,7 +111,8 @@ module.exports = {
   },
   plugins: [
     new HtmlWebpackPlugin({
-      title: 'Project',
+      title: 'Услуги',
+      menuElements: templateData.menuElements,
       template: path.resolve('src/views/index.pug'),
       hash: true,
       filename: 'index.html',

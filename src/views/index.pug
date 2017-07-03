@@ -1,11 +1,14 @@
 include ../blocks/header/header
 include ../blocks/section-skills/section-skills
 include ../blocks/section-go-calculator/section-go-calculator
+include ../blocks/footer/footer
 doctype html
 html(lang='ru')
 	include ./_head
+	title= title || 'Мойка.su'
 	body
 		block content
-		+header("Услуги")
+		+header("Услуги", htmlWebpackPlugin.options.menuElements)
 		+section-skills()
 		+section-go-calculator()
+		+footer(htmlWebpackPlugin.options.menuElements)

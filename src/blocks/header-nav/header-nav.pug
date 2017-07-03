@@ -1,15 +1,4 @@
-mixin header-nav(activePage)
-	- const menuElements = [
-	-	{level1: 'О нас', level2: ['О нас', 'Видео', 'Статьи']},
-	-	{level1: 'Услуги', level2: ['мойка авто', 'наномойка', 'химчистка салона', 'устранение запаха в салоне']},
-	-	{level1: 'Цены', level2: ['Калькулятор цен', 'Прайс-лист', 'Автоклубам']},
-	-	{level1: 'Скидки и акции', level2: ['Скидки и акции', 'Первое посещение', 'Клубная карта', 'Накопления', 'Получить клубную карту']},
-	-	{level1: 'Партнеры'},
-	-	{level1: 'Вакансии'},
-	-	{level1: 'Галерея'},
-	-	{level1: 'Отзывы'},
-	-	{level1: 'Контакты'}
-	- ]
+mixin header-nav(activePage, menuElements)
 	.header-nav-overlay
 	.header-nav-mobile
 		.header-nav-mobile__logo

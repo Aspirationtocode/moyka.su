@@ -1,11 +1,11 @@
 include ../header-nav/header-nav
 include ../header-cars/header-cars
 include ../header-footer/header-footer
-mixin header(activePage)
+mixin header(activePage, menuElements)
 	header.header
 		+header-cars()
 		.header__appear
-		+header-nav(activePage)
+		+header-nav(activePage, menuElements)
 		+header-footer()
 		.header-location-wrapper
 			.header-logo
