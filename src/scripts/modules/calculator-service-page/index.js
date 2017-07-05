@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import Calculator from './components/Calculator';
 
 export default function() {
-  ReactDOM.render(<button>Кнопка</button>, document.getElementById('calculator-service'));
+  ReactDOM.render(<Calculator />, document.getElementById('calculator-service'));
 }

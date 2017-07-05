@@ -82,6 +82,10 @@ module.exports = {
         use: configCss,
       },
       {
+        test: /\.css$/,
+        use: ['style-loader', 'css-loader'],
+      },
+      {
         test: /\.js$/,
         exclude: /node_modules/,
         use: 'babel-loader',
@@ -118,9 +122,9 @@ module.exports = {
     new HtmlWebpackPlugin({
       title: 'Калькулятор услуг',
       menuElements: templateData.menuElements,
-      template: path.resolve('src/views/service-calculator.pug'),
+      template: path.resolve('src/views/calculator-service.pug'),
       hash: true,
-      filename: 'service-calculator.html',
+      filename: 'calculator-service.html',
     }),
     new ExtractTextPlugin({
       filename: 'bundle.css',
