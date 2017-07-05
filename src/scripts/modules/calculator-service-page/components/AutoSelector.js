@@ -3,43 +3,37 @@ import React, { Component } from 'react';
 import Select from 'react-select';
 import 'react-select/dist/react-select.css';
 
+const fromStringsToObjects = array => array.map(element => ({ value: element, label: element }));
+
 class AutoSelector extends Component {
   constructor(props) {
-    super();
+    super(props);
     this.handleChange = this.handleChange.bind(this);
+    this.isMark = props.type === 'mark';
     this.state = {
-      placeholderValue: props.type === 'mark' ? 'Выберите марку' : props.modelPlaceholder,
+      markPlaceholder: 'Выберите марку',
     };
   }
   handleChange(value) {
     const { props } = this;
     const currentValue = value.value;
     this.setState({
-      placeholderValue: currentValue,
+      markPlaceholder: currentValue,
     });
-    if (props.type === 'mark') {
-      const currentModels = Object.keys(props.selectData[currentValue].models).map(option => {
-        return {
-          value: option,
-          label: option,
-        };
-      });
+    if (this.isMark) {
+      const currentModels = fromStringsToObjects(
+        Object.keys(props.selectData[currentValue].models),
+      );
       props.handleMarkChange(value.value, currentModels);
-    }
-    if (props.type === 'model') {
+    } else {
       props.handleModelChange(value.value);
     }
   }
   render() {
-    const { state, props } = this;
-    const { type, selectData, selectOptionsModels, modelsDisabled } = this.props;
-    const selectOptions = Object.keys(selectData).map(option => {
-      return {
-        value: option,
-        label: option,
-      };
-    });
-    const options = type === 'mark' ? selectOptions : selectOptionsModels;
+    const { state } = this;
+    const { type, selectData, selectOptionsModels, modelsDisabled, modelPlaceholder } = this.props;
+    const selectOptionsMarks = fromStringsToObjects(Object.keys(selectData));
+    const options = this.isMark ? selectOptionsMarks : selectOptionsModels;
     const classes = ['auto-selector'];
     classes.push(`auto-selector--${type}`);
     return (
@@ -47,9 +41,9 @@ class AutoSelector extends Component {
         <Select
           className="select-custom"
           noResultsText="Результатов нет"
-          placeholder={props.type === 'mark' ? state.placeholderValue : props.modelPlaceholder}
+          placeholder={this.isMark ? state.markPlaceholder : modelPlaceholder}
           options={options}
-          disabled={type === 'mark' ? false : modelsDisabled}
+          disabled={this.isMark ? false : modelsDisabled}
           onChange={this.handleChange}
         />
       </div>

@@ -17,25 +17,26 @@ class Calculator extends Component {
       modelPlaceholder: 'Выберите модель',
     };
   }
-  handleMarkChange(value, currentModels) {
+  handleMarkChange(mark, currentModels) {
     const { state } = this;
+    const isCurrentCarMarkEqualValue = state.currentCarMark === mark;
     this.setState({
       modelsDisabled: false,
       selectOptionsModels: currentModels,
-      currentCarMark: value,
-      currentCarDetails: state.currentCarMark === value ? state.currentCarDetails : null,
-      modelPlaceholder: state.currentCarMark === value ? state.currentCarModel : 'Выберите модель',
+      currentCarMark: mark,
+      currentCarDetails: isCurrentCarMarkEqualValue ? state.currentCarDetails : null,
+      modelPlaceholder: isCurrentCarMarkEqualValue ? state.currentCarModel : 'Выберите модель',
     });
   }
-  handleModelChange(value) {
+  handleModelChange(model) {
     const { state } = this;
     this.setState({
-      currentCarModel: value,
+      currentCarModel: model,
       currentCarDetails: {
         mark: state.currentCarMark,
-        model: value,
+        model: model,
       },
-      modelPlaceholder: value,
+      modelPlaceholder: model,
     });
   }
   render() {
