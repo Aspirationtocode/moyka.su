@@ -1,0 +1,55 @@
+.sale
+	font-family RobotoCondensedRegular
+	border 2px solid #1899B9
+	background-color #2EBBDF
+	color #fff
+	padding 2px 10px
+	transition all ease .1s
+
+	&:hover
+		background-color #fff
+		color #1899B9
+		cursor pointer
+
+.car-info
+	border 1px solid alpha($main-dark-color, 20%)
+	background-color alpha(#eee, 50%)
+	padding 10px
+	display flex
+	flex-direction column
+	size(270px, 160px)
+	justify-content space-between
+	color $main-dark-color
+	font-size 16px
+	font-family RobotoCondensedRegular
+
+	&-sales
+		display flex
+		justify-content space-between
+
+	&__price
+		background-color #CECECE
+		padding 3px
+		display inline-block
+		margin-left 5px
+
+	&__discount
+		display inline-block
+		border 2px solid #1899B9
+		background-color #2EBBDF
+		color #fff
+		font-size 16px
+		margin-left 5px
+		border-radius 3px
+		transition all ease .1s
+		outline none
+
+		&:hover
+			background-color #fff
+			color #1899B9
+
+	&__discount-wrapper
+		display flex
+		align-items center
+		justify-content space-between
+		font-size 16px
