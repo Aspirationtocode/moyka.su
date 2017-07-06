@@ -1,0 +1,57 @@
+.service-unit
+	margin-bottom 10px
+	&__header
+		margin-top 30px
+		margin-bottom 8px
+		font-family RobotoCondensedBold
+		font-size 26px
+
+	&-left-part
+		display flex
+		align-items center
+
+	&-right-part
+		flex-shrink 0
+		display flex
+
+	&-element
+		display flex
+		border-bottom 1px solid alpha(#95989A, 50%)
+		align-items center
+		justify-content space-between
+		width 100%
+		margin-bottom 5px
+
+		&__text
+			font-size 19px
+			font-family RobotoCondensedRegular
+
+		&__price
+			margin-left 10px
+			line-height 1.2
+			font-size 20px
+			font-family RobotoCondensedBold
+
+		&__checkbox
+			margin-right 12px
+			input
+				width 100%
+				height 100%
+			.rc-checkbox-inner
+				background #CECECE
+				size(20px)
+				border-radius 0
+				border 0
+
+				&:hover
+					border none
+
+				&::after
+					top 3px
+					left 6px
+
+			&.rc-checkbox-checked
+				.rc-checkbox-inner
+					&::after
+						top 3px
+						left 6px
