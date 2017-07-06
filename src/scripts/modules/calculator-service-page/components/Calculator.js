@@ -1,17 +1,22 @@
 import React, { Component } from 'react';
 import AutoSelector from './AutoSelector';
 import CarInfo from './CarInfo';
+import ServiceUnits from './ServiceUnits';
 import FlexContainer from '../../ordinary-react-components/FlexContainer';
 
 import auto from '../../../../data/calculator/auto';
 import categories from '../../../../data/calculator/categories';
+import priceList from '../../../../data/calculator/price-list';
 
 class Calculator extends Component {
   constructor() {
     super();
     this.handleMarkChange = this.handleMarkChange.bind(this);
+    this.handlePriceChange = this.handlePriceChange.bind(this);
     this.handleModelChange = this.handleModelChange.bind(this);
     this.renderCarInfo = this.renderCarInfo.bind(this);
+    this.renderPriceList = this.renderPriceList.bind(this);
+    this.renderServiceUnits = this.renderServiceUnits.bind(this);
     this.state = {
       modelsDisabled: true,
       selectOptionsModels: [],
@@ -19,7 +24,14 @@ class Calculator extends Component {
       currentCarModel: null,
       currentCarDetails: null,
       modelPlaceholder: 'Выберите модель',
+      currentPrice: 0,
     };
+  }
+  handlePriceChange(value) {
+    const { state } = this;
+    this.setState({
+      currentPrice: state.currentPrice + value,
+    });
   }
   handleMarkChange(mark, currentModels) {
     const { state } = this;
@@ -38,7 +50,7 @@ class Calculator extends Component {
       currentCarModel: model,
       currentCarDetails: {
         mark: state.currentCarMark,
-        model: model,
+        model,
       },
       modelPlaceholder: model,
     });
@@ -49,13 +61,37 @@ class Calculator extends Component {
       const { mark, model } = state.currentCarDetails;
       const group = auto[mark].models[model];
       const category = categories[group].category;
-      return <CarInfo group={group} category={category} price={10000} />;
+      return <CarInfo group={group} category={category} price={state.currentPrice} />;
     }
     return <CarInfo withoutData />;
   }
+  renderPriceList() {
+    const { state } = this;
+    if (state.currentCarDetails) {
+      const { mark, model } = state.currentCarDetails;
+      const group = auto[mark].models[model];
+      const currentPriceList = {};
+      for (let key in priceList) {
+        currentPriceList[key] = priceList[key][group];
+      }
+    }
+  }
+  renderServiceUnits() {
+    const { state } = this;
+    if (state.currentCarDetails) {
+      const { mark, model } = state.currentCarDetails;
+      const group = auto[mark].models[model];
+      return (
+        <ServiceUnits
+          group={group}
+          priceList={priceList}
+          handlePriceChange={this.handlePriceChange}
+        />
+      );
+    }
+  }
   render() {
     const { state } = this;
-
     return (
       <div className="calculator">
         <div className="calculator-data">
@@ -80,6 +116,7 @@ class Calculator extends Component {
             {this.renderCarInfo()}
           </div>
         </div>
+        {this.renderServiceUnits()}
       </div>
     );
   }

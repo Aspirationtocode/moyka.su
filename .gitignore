@@ -1,3 +1,4 @@
 node_modules
 .atomignore
 dist
+npm-debug.log

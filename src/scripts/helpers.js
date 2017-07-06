@@ -14,3 +14,5 @@ export const animate = (timeout, ...elements) => {
     }
   });
 };
+
+export const checkOnCountAbility = string => string.slice(-6) === '(1 шт)';
