@@ -27,11 +27,17 @@ class Calculator extends Component {
       currentPrice: 0,
     };
   }
-  handlePriceChange(value) {
+  handlePriceChange(value, isCountable) {
     const { state } = this;
-    this.setState({
-      currentPrice: state.currentPrice + value,
-    });
+    if (isCountable) {
+      this.setState({
+        currentPrice: state.currentPrice + value,
+      });
+    } else {
+      this.setState({
+        currentPrice: state.currentPrice + value,
+      });
+    }
   }
   handleMarkChange(mark, currentModels) {
     const { state } = this;

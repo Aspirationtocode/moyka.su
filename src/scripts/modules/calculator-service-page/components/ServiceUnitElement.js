@@ -15,7 +15,13 @@ class ServiceUnitElement extends Component {
         <div className="service-unit-left-part">
           <ReactCheckbox
             onChange={(e) => {
-              props.handleCheckboxChange(e, servicePrice);
+              props.handleCheckboxChange(
+                e,
+                serviceTitle,
+                checkOnCountAbility(serviceTitle)
+                  ? props.countableServices[serviceTitle].multiplier * servicePrice
+                  : servicePrice,
+              );
             }}
             className="service-unit-element__checkbox"
           />
@@ -24,13 +30,22 @@ class ServiceUnitElement extends Component {
         <div className="service-unit-right-part">
           {checkOnCountAbility(serviceTitle) &&
             <NumberInput
-              value={1}
+              value={props.countableServices[serviceTitle].multiplier}
               className="service-unit__number-input"
               style={{ input: { width: '50px' } }}
               min={1}
               max={4}
+              onChange={(multiplier) => {
+                props.handleCountChange(serviceTitle, servicePrice, multiplier);
+              }}
             />}
-          <div className="service-unit-element__price">{servicePrice} ₽</div>
+          <div className="service-unit-element__price">
+            {checkOnCountAbility(serviceTitle)
+              ? servicePrice * props.countableServices[serviceTitle].multiplier
+              : servicePrice}
+            {' '}
+            ₽
+          </div>
         </div>
       </div>
     );
