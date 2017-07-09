@@ -15,12 +15,33 @@
 		display flex
 
 	&-element
+		position relative
 		display flex
-		border-bottom 1px solid alpha(#95989A, 50%)
 		align-items center
 		justify-content space-between
 		width 100%
 		margin-bottom 5px
+		transition all ease .2s
+		padding 4px
+		padding-bottom 2px
+
+		&::after
+			content ""
+			position absolute
+			top 100%
+			left 4px
+			background-color alpha(#95989A, 50%)
+			height 1px
+			width calc(100% - 8px)
+			transition all ease .2s
+
+
+		&:hover
+			background-color alpha(#95989A, 10%)
+			cursor pointer
+
+			&::after
+				opacity 0
 
 		&__text
 			font-size 19px

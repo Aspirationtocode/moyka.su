@@ -7,12 +7,12 @@ mixin header-nav(activePage, menuElements)
 		ul.header-nav
 			each firstMenu, index in menuElements
 				- if (firstMenu.level2)
-					li(class=`header-nav__element header-nav__element--${index+1}s header-nav__element--with-dot ${(activePage === firstMenu.level1) ? "header-nav__element--active-page" : ""}`)
-						A(href="http://vk.com").header-nav__link= firstMenu.level1
+					li(class=`header-nav__element header-nav__element--${index+1}s header-nav__element--with-dot ${(activePage === firstMenu.level1.name) ? "header-nav__element--active-page" : ""}`)
+						A(href= firstMenu.level1.link).header-nav__link= firstMenu.level1.name
 						ul(class=`header-nav-dropdown header-nav-dropdown--${index + 1}s`)
 							each secondMenu, index in firstMenu.level2
 								li.header-nav-dropdown__element
-									a(href="http://vk.com").header-nav-dropdown__link= secondMenu
+									a(href= secondMenu.link).header-nav-dropdown__link= secondMenu.name
 				- else
 					li.header-nav__element
-						a(href="http://vk.com").header-nav__link= firstMenu.level1
+						a(href= firstMenu.level1.link).header-nav__link= firstMenu.level1.name

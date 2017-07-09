@@ -6,6 +6,10 @@
 	padding 2px 10px
 	transition all ease .1s
 
+	&--active
+		background-color #fff
+		color #2EBBDF
+
 	&:hover
 		background-color #fff
 		color #1899B9
@@ -22,6 +26,9 @@
 	color $main-dark-color
 	font-size 16px
 	font-family RobotoCondensedRegular
+
+	@media screen and (max-width: 400px)
+		width 100%
 
 	&-sales
 		display flex

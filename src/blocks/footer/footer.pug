@@ -1,15 +1,17 @@
-mixin footer(menuElements)
-	.footer
+mixin footer(menuElements, isMarginTop)
+	- const baseClasses = ['footer'];
+	- if (isMarginTop) {baseClasses.push('footer--with-margin-top')}
+	div(class=`${baseClasses.join(' ')}`)
 		.footer-part.footer-part--left
 			nav.footer-nav
 				each element, index in menuElements
 					li.footer-nav__element
-						a(href="http://vk.com").footer-nav__link= element.level1
+						a(href= element.level1.link).footer-nav__link= element.level1.name
 			.footer-telephone
 				.footer-telephone__icon
 				.footer-telephone__number +7-926-159-82-62
 		.footer-part.footer-part--right
-			a(href="http://vk.com").footer-go-calculator
+			a(href="./calculator-service.html").footer-go-calculator
 				.footer-go-calculator__text
 					| Калькулятор стоимости
 					br
@@ -20,8 +22,8 @@ mixin footer(menuElements)
 				.footer-time__icon
 			.footer-social
 				a(href="http://vk.com").footer-social__icon.footer-social__icon--instagram
-				a(href="http://vk.com").footer-social__icon.footer-social__icon--vk
+				a(href="https://vk.com/moyka_su").footer-social__icon.footer-social__icon--vk
 			.footer-rights © 2017 Официальный сайт МОЙКА.su. Все права защищены.
 			.footer-creator-info
 				.footer-creator-info__text Сайт создан
-				a(href="http://vk.com").footer-creator-info__link @aspiretocode
+				a(href="https://vk.com/aspiretocode").footer-creator-info__link @aspiretocode

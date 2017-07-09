@@ -1,52 +1,120 @@
 [
   {
-    "level1":"О нас",
+    "level1": {
+      "name": "О нас",
+      "link": "https://vk.com/moyka_su"
+    },
     "level2":[
-      "О нас",
-      "Видео",
-      "Статьи"
+      {
+        "name": "О нас",
+        "link": "https://vk.com/moyka_su"
+      },
+      {
+        "name": "Видео",
+        "link": "https://vk.com/moyka_su"
+      },
+      {
+        "name": "Статьи",
+        "link": "https://vk.com/moyka_su"
+      }
     ]
   },
   {
-    "level1":"Услуги",
+    "level1": {
+      "name": "Услуги",
+      "link": "https://vk.com/moyka_su"
+    },
     "level2":[
-      "мойка авто",
-      "наномойка",
-      "химчистка салона",
-      "устранение запаха в салоне"
+      {
+        "name": "Мойка авто",
+        "link": "https://vk.com/moyka_su"
+      },
+      {
+        "name": "Наномойка",
+        "link": "https://vk.com/moyka_su"
+      },
+      {
+        "name": "Химчистка салона",
+        "link": "https://vk.com/moyka_su"
+      },
+      {
+        "name": "Устранение запаха в салоне",
+        "link": "https://vk.com/moyka_su"
+      }
     ]
   },
   {
-    "level1":"Цены",
+    "level1":{
+      "name": "Цены",
+      "link": "https://vk.com/moyka_su"
+    },
     "level2":[
-      "Калькулятор цен",
-      "Прайс-лист",
-      "Автоклубам"
+      {
+        "name": "Калькулятор цен",
+        "link": "./calculator-service.html"
+      },
+      {
+        "name": "Прайс-лист",
+        "link": "https://vk.com/moyka_su"
+      },
+      {
+        "name": "Автоклубам",
+        "link": "https://vk.com/moyka_su"
+      }
     ]
   },
   {
-    "level1":"Скидки и акции",
+    "level1":{
+      "name": "Скидки и акции",
+      "link": "https://vk.com/moyka_su"
+    },
     "level2":[
-      "Скидки и акции",
-      "Первое посещение",
-      "Клубная карта",
-      "Накопления",
-      "Получить клубную карту"
+      {
+        "name": "Первое посещение",
+        "link": "https://vk.com/moyka_su"
+      },
+      {
+        "name": "Клубная карта",
+        "link": "https://vk.com/moyka_su"
+      },
+      {
+        "name": "Накопления",
+        "link": "https://vk.com/moyka_su"
+      },
+      {
+        "name": "Получить клубную карту",
+        "link": "https://vk.com/moyka_su"
+      }
     ]
   },
   {
-    "level1":"Партнеры"
+    "level1":{
+      "name": "Партнеры",
+      "link": "https://vk.com/moyka_su"
+    }
   },
   {
-    "level1":"Вакансии"
+    "level1":{
+      "name": "Вакансии",
+      "link": "https://vk.com/moyka_su"
+    }
   },
   {
-    "level1":"Галерея"
+    "level1":{
+      "name": "Галерея",
+      "link": "https://vk.com/moyka_su"
+    }
   },
   {
-    "level1":"Отзывы"
+    "level1":{
+      "name": "Отзывы",
+      "link": "https://vk.com/moyka_su"
+    }
   },
   {
-    "level1":"Контакты"
+    "level1":{
+      "name": "Контакты",
+      "link": "https://vk.com/moyka_su"
+    }
   }
 ]

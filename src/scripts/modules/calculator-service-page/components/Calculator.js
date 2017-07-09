@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import AutoSelector from './AutoSelector';
 import CarInfo from './CarInfo';
 import ServiceUnits from './ServiceUnits';
-import FlexContainer from '../../ordinary-react-components/FlexContainer';
 
 import { auto, categories, priceList } from '../../../../data';
 
@@ -95,21 +94,15 @@ class Calculator extends Component {
       <div className="calculator">
         <div className="calculator-data">
           <div className="calculator-data__input">
-            <FlexContainer>
-              <AutoSelector
-                type="mark"
-                selectData={auto}
-                handleMarkChange={this.handleMarkChange}
-              />
-              <AutoSelector
-                type="model"
-                selectData={auto}
-                selectOptionsModels={state.selectOptionsModels}
-                modelsDisabled={state.modelsDisabled}
-                handleModelChange={this.handleModelChange}
-                modelPlaceholder={state.modelPlaceholder}
-              />
-            </FlexContainer>
+            <AutoSelector type="mark" selectData={auto} handleMarkChange={this.handleMarkChange} />
+            <AutoSelector
+              type="model"
+              selectData={auto}
+              selectOptionsModels={state.selectOptionsModels}
+              modelsDisabled={state.modelsDisabled}
+              handleModelChange={this.handleModelChange}
+              modelPlaceholder={state.modelPlaceholder}
+            />
           </div>
           <div className="calculator-data__output">
             {this.renderCarInfo()}
