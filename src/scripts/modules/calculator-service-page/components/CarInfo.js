@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-import discounts from '../../../../data/calculator/discounts';
+import { discounts } from '../../../../data';
 
 const CarInfoSale = ({ number }) => <div className="sale">{number}%</div>;
 
@@ -19,9 +19,7 @@ class CarInfo extends Component {
             Применить скидку: <button className="car-info__discount">Сбросить скидку</button>
           </div>
           <div className="car-info-sales">
-            {discounts.map((number, index) => {
-              return <CarInfoSale number={number} key={index} />;
-            })}
+            {discounts.map((number, index) => <CarInfoSale number={number} key={index} />)}
           </div>
         </div>
       );

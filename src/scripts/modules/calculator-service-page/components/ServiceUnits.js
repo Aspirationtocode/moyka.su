@@ -1,12 +1,10 @@
 import React, { Component } from 'react';
 import entries from 'object.entries';
-import assign from 'object.assign';
 import assignDeep from 'object-assign-deep';
-import update from 'react-addons-update';
 
 import ServiceUnitElement from './ServiceUnitElement';
 
-import countableServices from '../../../../data/calculator/countable-services';
+import { countableServices } from '../../../../data';
 
 class ServiceUnits extends Component {
   constructor(props) {
@@ -28,7 +26,7 @@ class ServiceUnits extends Component {
       }),
     });
     if (state.countableServices[serviceTitle].checked) {
-      props.handlePriceChange(isPriceIncreases ? servicePrice : -servicePrice, true);
+      props.handlePriceChange(isPriceIncreases ? servicePrice : -servicePrice);
     }
   }
   handleCheckboxChange(e, serviceTitle, servicePrice) {
@@ -42,10 +40,9 @@ class ServiceUnits extends Component {
       });
     }
     const value = checked ? servicePrice : -servicePrice;
-    props.handlePriceChange(value, false);
+    props.handlePriceChange(value);
   }
   renderUnit(unit) {
-    const { handleCountChange } = this.props;
     const { state } = this;
     const header = entries(unit)[0][1];
     const services = entries(unit).slice(1).map((service, index) => {
@@ -71,10 +68,10 @@ class ServiceUnits extends Component {
   renderUnits() {
     const { group, priceList } = this.props;
     const currentPriceList = [];
-    for (let [key, value] of entries(priceList)) {
-      let currentUnit = {};
+    for (const [key, value] of entries(priceList)) {
+      const currentUnit = {};
       currentUnit.header = key;
-      for (let [innerKey, innerValue] of entries(value)) {
+      for (const [innerKey, innerValue] of entries(value)) {
         currentUnit[innerKey] = innerValue[group];
       }
       currentPriceList.push(this.renderUnit(currentUnit));
@@ -82,7 +79,6 @@ class ServiceUnits extends Component {
     return currentPriceList;
   }
   render() {
-    const { props } = this;
     return (
       <div className="service-units">
         {this.renderUnits()}

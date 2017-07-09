@@ -1,6 +1,7 @@
 import $ from 'jquery';
 import fastclick from 'fastclick';
-import './static-init'
+import './static-init';
+
 // index-page
 import initHeaderNav from './modules/index-page/init-header-nav';
 import initHeaderElements from './modules/index-page/init-header-elements';
@@ -11,11 +12,11 @@ import initServicePage from './modules/calculator-service-page/';
 fastclick.attach(document.body);
 
 const pageConformity = {
-  'index-page': function () {
+  'index-page': function initIndexPage() {
     initHeaderNav();
     initHeaderElements();
   },
-  'calculator-service-page': function () {
+  'calculator-service-page': function initCalculatorServicePage() {
     initHeaderNav();
     initHeaderElements();
     initServicePage();
@@ -24,4 +25,6 @@ const pageConformity = {
 
 const currentPageClass = $(document.body).attr('class');
 
-pageConformity[currentPageClass]();
+if (pageConformity[currentPageClass]) {
+  pageConformity[currentPageClass]();
+}

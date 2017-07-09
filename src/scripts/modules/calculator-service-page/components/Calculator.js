@@ -4,9 +4,7 @@ import CarInfo from './CarInfo';
 import ServiceUnits from './ServiceUnits';
 import FlexContainer from '../../ordinary-react-components/FlexContainer';
 
-import auto from '../../../../data/calculator/auto';
-import categories from '../../../../data/calculator/categories';
-import priceList from '../../../../data/calculator/price-list';
+import { auto, categories, priceList } from '../../../../data';
 
 class Calculator extends Component {
   constructor() {
@@ -27,17 +25,11 @@ class Calculator extends Component {
       currentPrice: 0,
     };
   }
-  handlePriceChange(value, isCountable) {
+  handlePriceChange(value) {
     const { state } = this;
-    if (isCountable) {
-      this.setState({
-        currentPrice: state.currentPrice + value,
-      });
-    } else {
-      this.setState({
-        currentPrice: state.currentPrice + value,
-      });
-    }
+    this.setState({
+      currentPrice: state.currentPrice + value,
+    });
   }
   handleMarkChange(mark, currentModels) {
     const { state } = this;
@@ -77,7 +69,7 @@ class Calculator extends Component {
       const { mark, model } = state.currentCarDetails;
       const group = auto[mark].models[model];
       const currentPriceList = {};
-      for (let key in priceList) {
+      for (const key in priceList) {
         currentPriceList[key] = priceList[key][group];
       }
     }
@@ -95,6 +87,7 @@ class Calculator extends Component {
         />
       );
     }
+    return null;
   }
   render() {
     const { state } = this;
