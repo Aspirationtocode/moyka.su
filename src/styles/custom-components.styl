@@ -24,10 +24,21 @@ $select-black-color = alpha(#000, 70%)
 
 
 .in-development
+	position relative
 	height 360px
 	display flex
 	align-items center
 	justify-content center
+
+	&__text
+		font-size 24px
+		color $main-dark-color
+		position absolute
+		font-family RobotoCondensedBold
+		top 10px
+		left 10px
+		z-index 1
+
 	&__image
 		size(289px, 301px)
 		image-bg('in-development.png')

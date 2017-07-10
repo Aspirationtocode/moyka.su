@@ -6,8 +6,8 @@ doctype html
 html(lang='ru')
 	include ./_head
 	title= title
-	body.about-us
-		- const name = "О нас"
+	body.get-club-card
+		- const name = "Получить клубную карту"
 		block content
 		+header(name, menuElements)
 		+in-development(name)

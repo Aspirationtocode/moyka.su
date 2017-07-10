@@ -12,18 +12,16 @@ import initServicePage from './modules/calculator-service-page/';
 fastclick.attach(document.body);
 
 const pageConformity = {
-  'index-page': function initIndexPage() {
-    initHeaderNav();
-    initHeaderElements();
-  },
+  'index-page': function initIndexPage() {},
   'calculator-service-page': function initCalculatorServicePage() {
-    initHeaderNav();
-    initHeaderElements();
     initServicePage();
   },
 };
 
 const currentPageClass = $(document.body).attr('class');
+
+initHeaderNav();
+initHeaderElements();
 
 if (pageConformity[currentPageClass]) {
   pageConformity[currentPageClass]();

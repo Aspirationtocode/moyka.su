@@ -14,5 +14,5 @@ mixin header-nav(activePage, menuElements)
 								li.header-nav-dropdown__element
 									a(href= secondMenu.link).header-nav-dropdown__link= secondMenu.name
 				- else
-					li.header-nav__element
+					li(class=`header-nav__element ${(activePage === firstMenu.level1.name) ? "header-nav__element--active-page" : ""}`)
 						a(href= firstMenu.level1.link).header-nav__link= firstMenu.level1.name

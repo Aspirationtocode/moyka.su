@@ -46,12 +46,12 @@
   {
     "level1":{
       "name": "Цены",
-      "link": "./calculator-service.html"
+      "link": "./calculator-service.html#calculator-service"
     },
     "level2":[
       {
-        "name": "Калькулятор цен",
-        "link": "./calculator-service.html"
+        "name": "Калькулятор услуг",
+        "link": "./calculator-service.html#calculator-service"
       },
       {
         "name": "Прайс-лист",
@@ -59,50 +59,50 @@
       },
       {
         "name": "Автоклубам",
-        "link": "https://vk.com/moyka_su"
+        "link": "./autoclubs.html"
       }
     ]
   },
   {
     "level1":{
       "name": "Скидки и акции",
-      "link": "https://vk.com/moyka_su"
+      "link": "./discounts.html"
     },
     "level2":[
       {
         "name": "Первое посещение",
-        "link": "https://vk.com/moyka_su"
+        "link": "./first-visit.html"
       },
       {
         "name": "Клубная карта",
-        "link": "https://vk.com/moyka_su"
+        "link": "./club-card.html"
       },
       {
         "name": "Накопления",
-        "link": "https://vk.com/moyka_su"
+        "link": "./accumulations.html"
       },
       {
         "name": "Получить клубную карту",
-        "link": "https://vk.com/moyka_su"
+        "link": "./get-club-card.html"
       }
     ]
   },
   {
     "level1":{
       "name": "Партнеры",
-      "link": "https://vk.com/moyka_su"
+      "link": "./partners.html"
     }
   },
   {
     "level1":{
       "name": "Вакансии",
-      "link": "https://vk.com/moyka_su"
+      "link": "./vacancies.html"
     }
   },
   {
     "level1":{
       "name": "Галерея",
-      "link": "https://vk.com/moyka_su"
+      "link": "./galery.html"
     }
   },
   {
@@ -114,7 +114,7 @@
   {
     "level1":{
       "name": "Контакты",
-      "link": "https://vk.com/moyka_su"
+      "link": "./contacts.html"
     }
   }
 ]
