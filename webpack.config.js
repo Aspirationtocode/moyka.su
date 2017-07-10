@@ -1,11 +1,10 @@
 const path = require('path');
 const webpack = require('webpack');
 const CssSourcemapPlugin = require('css-sourcemaps-webpack-plugin');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const browsers = require('./package').browsers;
 
-const templateData = require('./src/data');
+const pages = require('./pages');
 
 const isProd = process.env.NODE_ENV === 'production';
 
@@ -112,20 +111,7 @@ module.exports = {
     stats: 'errors-only',
   },
   plugins: [
-    new HtmlWebpackPlugin({
-      title: 'Услуги',
-      menuElements: templateData.menuElements,
-      template: path.resolve('src/views/index.pug'),
-      hash: true,
-      filename: 'index.html',
-    }),
-    new HtmlWebpackPlugin({
-      title: 'Калькулятор услуг',
-      menuElements: templateData.menuElements,
-      template: path.resolve('src/views/calculator-service.pug'),
-      hash: true,
-      filename: 'calculator-service.html',
-    }),
+    ...pages,
     new ExtractTextPlugin({
       filename: 'bundle.css',
       disable: isProd,

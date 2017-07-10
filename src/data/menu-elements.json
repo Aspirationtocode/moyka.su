@@ -2,12 +2,12 @@
   {
     "level1": {
       "name": "О нас",
-      "link": "https://vk.com/moyka_su"
+      "link": "./about-us.html"
     },
     "level2":[
       {
         "name": "О нас",
-        "link": "https://vk.com/moyka_su"
+        "link": "./about-us.html"
       },
       {
         "name": "Видео",
@@ -22,7 +22,7 @@
   {
     "level1": {
       "name": "Услуги",
-      "link": "https://vk.com/moyka_su"
+      "link": "./index.html"
     },
     "level2":[
       {
@@ -46,7 +46,7 @@
   {
     "level1":{
       "name": "Цены",
-      "link": "https://vk.com/moyka_su"
+      "link": "./calculator-service.html"
     },
     "level2":[
       {
@@ -108,7 +108,7 @@
   {
     "level1":{
       "name": "Отзывы",
-      "link": "https://vk.com/moyka_su"
+      "link": "https://vk.com/topic-150039912_35906847"
     }
   },
   {

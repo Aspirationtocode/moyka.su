@@ -37,7 +37,7 @@ class CarInfo extends Component {
     super(props);
     this.handleUpdateCurrentDiscount = this.handleUpdateCurrentDiscount.bind(this);
     this.state = {
-      currentDiscount: 2,
+      currentDiscount: 0,
     };
   }
   handleUpdateCurrentDiscount(discount) {

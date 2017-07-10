@@ -16,6 +16,7 @@ export default function initHeaderNav() {
     if (viewport().width > 722) {
       headerNavWrapper.removeClass('header-nav-wrapper--mobile');
       headerNavOverlay.removeClass('active');
+      burger.removeClass('header-nav-mobile__burger--close');
     }
   });
 
