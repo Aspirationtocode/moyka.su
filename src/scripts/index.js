@@ -13,6 +13,12 @@ import initPriceListPage from './modules/price-list-page';
 
 fastclick.attach(document.body);
 
+$(window).on('load', () => {
+  $('body').css({
+    visibility: 'visible',
+  });
+});
+
 const pageConformity = {
   'index-page': function () {},
   'calculator-service-page': function () {
