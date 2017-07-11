@@ -52,6 +52,14 @@ const pagesData = [
     title: 'Автоклубам',
     filename: 'autoclubs',
   },
+  {
+    title: 'Прайс-лист',
+    filename: 'price-list',
+  },
+  {
+    title: 'Контакты',
+    filename: 'contacts',
+  },
 ];
 
 const pages = pagesData.map((page) => {

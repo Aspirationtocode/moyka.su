@@ -1,0 +1,14 @@
+include ../blocks/header/header
+include ../blocks/footer/footer
+include ../blocks/section-contacts/section-contacts
+- const {menuElements, title} = htmlWebpackPlugin.options;
+doctype html
+html(lang='ru')
+	include ./_head
+	title= title
+	body.club-card
+		- const name = "Контакты"
+		block content
+		+header(name, menuElements)
+		+section-contacts()
+		+footer(menuElements, false)

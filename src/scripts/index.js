@@ -1,20 +1,25 @@
 import $ from 'jquery';
 import fastclick from 'fastclick';
 import './static-init';
-
 // index-page
 import initHeaderNav from './modules/index-page/init-header-nav';
 import initHeaderElements from './modules/index-page/init-header-elements';
 
-// service-calculator
+// calculator-service-page
 import initServicePage from './modules/calculator-service-page/';
+
+// price-list-page
+import initPriceListPage from './modules/price-list-page';
 
 fastclick.attach(document.body);
 
 const pageConformity = {
-  'index-page': function initIndexPage() {},
-  'calculator-service-page': function initCalculatorServicePage() {
+  'index-page': function () {},
+  'calculator-service-page': function () {
     initServicePage();
+  },
+  'price-list': function () {
+    initPriceListPage();
   },
 };
 

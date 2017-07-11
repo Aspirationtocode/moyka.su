@@ -102,6 +102,7 @@
 			transition opacity ease .6s
 			border 3px solid #fff
 			z-index 200
+			pointer-events none
 
 			@media screen and (max-width: 740px)
 				float none
@@ -111,6 +112,7 @@
 				size(300px, 210px)
 
 			&.active
+				pointer-events auto
 				opacity 1
 
 
