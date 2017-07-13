@@ -5,6 +5,8 @@ import 'rc-checkbox/assets/index.css';
 import ReactCheckbox from 'rc-checkbox';
 import NumberInput from 'react-numeric-input';
 
+import FlexContainer from '../../ordinary-react-components/FlexContainer';
+
 import { checkOnCountAbility } from '../../../helpers';
 
 class ServiceUnitElement extends Component {
@@ -14,21 +16,21 @@ class ServiceUnitElement extends Component {
     return (
       <div className="service-unit-element">
         <div className="service-unit-left-part">
-          <ReactCheckbox
-            onChange={(e) => {
-              props.handleCheckboxChange(
-                e,
-                serviceTitle,
-                checkOnCountAbility(serviceTitle)
-                  ? props.countableServices[serviceTitle].multiplier * servicePrice
-                  : servicePrice,
-              );
-            }}
-            className="service-unit-element__checkbox"
-          />
-          <div className="service-unit-element__text">{serviceTitle}</div>
-        </div>
-        <div className="service-unit-right-part">
+          <FlexContainer alignItems="center">
+            <ReactCheckbox
+              onChange={(e) => {
+                props.handleCheckboxChange(
+                  e,
+                  serviceTitle,
+                  checkOnCountAbility(serviceTitle)
+                    ? props.countableServices[serviceTitle].multiplier * servicePrice
+                    : servicePrice,
+                );
+              }}
+              className="service-unit-element__checkbox"
+            />
+            <div className="service-unit-element__text">{serviceTitle}</div>
+          </FlexContainer>
           {checkOnCountAbility(serviceTitle) &&
             <NumberInput
               value={props.countableServices[serviceTitle].multiplier}
@@ -40,6 +42,9 @@ class ServiceUnitElement extends Component {
                 props.handleCountChange(serviceTitle, servicePrice, multiplier);
               }}
             />}
+        </div>
+        <div className="service-unit-right-part">
+
           <div className="service-unit-element__price">
             {checkOnCountAbility(serviceTitle)
               ? servicePrice * props.countableServices[serviceTitle].multiplier
