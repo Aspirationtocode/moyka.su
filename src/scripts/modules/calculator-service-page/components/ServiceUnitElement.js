@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { findDOMNode } from 'react-dom';
 
 import 'rc-checkbox/assets/index.css';
 import ReactCheckbox from 'rc-checkbox';
@@ -34,7 +35,7 @@ class ServiceUnitElement extends Component {
               className="service-unit__number-input"
               style={{ input: { width: '50px' } }}
               min={1}
-              max={4}
+              max={100}
               onChange={(multiplier) => {
                 props.handleCountChange(serviceTitle, servicePrice, multiplier);
               }}

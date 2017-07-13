@@ -1,12 +1,38 @@
-$select-black-color = alpha(#000, 70%)
+// Select component styles
+
+$select-black-color = alpha($main-color, 95%)
 
 .select-custom
 	border-bottom 1px solid alpha(#fff, 20%)
+
+	&.is-open
+		.Select-arrow-zone
+			&:hover
+				.Select-arrow
+					border-bottom-color #eee
+			.Select-arrow
+				border-bottom-color #eee
+
+				&:hover
+					border-bottom-color #fff
 
 	.Select-control
 		background-color $select-black-color
 		border none
 		border-radius 0
+
+		.Select-placeholder
+			color #fff
+
+		.Select-arrow-zone
+			&:hover
+				.Select-arrow
+					border-top-color #eee
+			.Select-arrow
+				border-top-color #eee
+
+				&:hover
+					border-top-color #fff
 
 	&.is-open
 		.Select-control
@@ -22,6 +48,48 @@ $select-black-color = alpha(#000, 70%)
 	.Select-input
 		color #fff
 
+// Checkbox component styles
+
+.service-unit-element__checkbox
+	margin-right 12px
+	position static !important
+
+	input
+		width 100%
+		height 100%
+		display block
+
+
+		&::after
+			content ""
+			position absolute
+			top 0
+			left 0
+			width 100%
+			height 100%
+			background-color transparent
+
+
+	.rc-checkbox-inner
+		background #CECECE
+		size(20px)
+		border-radius 0
+		border 0
+
+		&:hover
+			border none
+
+		&::after
+			top 3px
+			left 6px
+
+	&.rc-checkbox-checked
+		.rc-checkbox-inner
+			&::after
+				top 3px
+				left 6px
+
+// in-development block styles
 
 .in-development
 	position relative
@@ -45,6 +113,9 @@ $select-black-color = alpha(#000, 70%)
 		margin 0 auto
 		margin-bottom -60px
 		filter grayscale(100%)
+
+// ReactTable component styles
+
 
 .ReactTable
 	color $main-dark-color

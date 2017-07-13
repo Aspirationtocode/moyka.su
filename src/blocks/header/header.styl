@@ -30,12 +30,12 @@
 		position absolute
 		top 65px
 		left 0
-		width calc(210px * 4)
-		height calc(40px * 4)
+		width calc(210px * 5)
+		height calc(40px * 5)
 		image-bg("icons/logo.svg")
 		opacity 0
 		transition all ease .6s
-		pointer-events none
+		pointer-events auto
 
 		&.animated
 			opacity .95
@@ -45,14 +45,19 @@
 			opacity .1
 
 		@media screen and (max-width: 1600px)
-			width calc(210px * 3)
-			height calc(40px * 3)
+			width calc(210px * 4)
+			height calc(40px * 4)
 			top 80px
 
 		@media screen and (max-width: 1280px)
 			top 186px
-			width calc(210px * 2.6)
-			height calc(40px * 2.6)
+			width calc(210px * 4)
+			height calc(40px * 4)
+
+		@media screen and (max-width: 900px)
+			top 186px
+			width calc(210px * 3.4)
+			height calc(40px * 3.4)
 
 		@media screen and (max-width: 740px)
 			display none
@@ -83,14 +88,11 @@
 
 		&__text
 			font-family RobotoCondensedLight
-			font-size 34px
+			font-size 25px
 			color #fff
 
-			@media screen and (max-width: 1200px)
-				font-size 26px
 			@media screen and (max-width: 740px)
 				text-align center
-				font-size 28px
 				margin-bottom 4px
 
 		&__map

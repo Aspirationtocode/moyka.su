@@ -8,7 +8,7 @@ mixin header(activePage, menuElements)
 		+header-nav(activePage, menuElements)
 		+header-footer()
 		.header-location-wrapper
-			.header-logo
+			a(href="./index.html").header-logo
 			.header-location
 				.header-location__text
 					| Мы находимся по адресу:
@@ -16,4 +16,4 @@ mixin header(activePage, menuElements)
 					| г.Москва г.Троицк Калужское шоссе д. 38
 				button.header-location__button Показать на карте
 				.header-location__map
-					iframe(src='https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d565.0395632696665!2d37.328353529287995!3d55.49476639878032!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x414aaab1d6f19845%3A0x40407aa194d161c4!2z0JAtMTMwLCAzNSwg0JLQsNGC0YPRgtC40L3QutC4LCDQnNC-0YHQutC-0LLRgdC60LDRjyDQvtCx0LsuLCDQoNC-0YHRgdC40Y8sIDE0MjE5MQ!5e0!3m2!1sru!2s!4v1498411283038', width='100%', height='100%', frameborder='0', style='border: none', allowfullscreen='')
+					script(type='text/javascript', charset='utf-8', async='', src='https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3A28af424dd343bf904005ada8659098d357c84475aceb81967c05bfb680d80dbb&width=100%&height=100%&lang=ru_RU&scroll=true')
