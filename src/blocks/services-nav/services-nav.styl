@@ -1,0 +1,77 @@
+.services-nav
+	margin-bottom 20px
+	display flex
+	flex-direction column
+
+	&__header
+		font-size 20px
+		font-family RobotoCondensedBold
+
+	&__subheader
+		font-size 17px
+		font-family RobotoCondensedRegular
+		margin 10px 0 20px 0
+
+	&-services
+		display flex
+		flex-wrap wrap
+		padding 15px
+		align-self center
+
+		@media screen and (max-width: 860px)
+			max-width 400px
+			justify-content center
+
+	&-element
+		padding 10px
+		flex-basis 150px
+		display flex
+		flex-direction column
+		align-items center
+		justify-content space-around
+		box-sizing border-box
+
+		@media screen and (max-width: 860px)
+			flex-basis 50%
+
+		@media screen and (max-width: 460px)
+			flex-basis 25%
+
+		&:hover
+			cursor pointer
+
+		&__text
+			margin-top 3px
+			width 100px
+			font-size 20px
+			font-family RobotoCondensedBold
+			text-align center
+			line-height 1
+			color $main-dark-color
+
+			@media screen and (max-width: 460px)
+				font-size 17px
+
+		&__image
+			size(150px)
+			border-radius 50%
+			border 1px solid #eee
+
+			@media screen and (max-width: 400px)
+				size(80px)
+
+		&--complex-wash
+			.services-nav-element__image
+				image-bg("services-nav_complex-wash.png")
+
+		&--body-wash
+			.services-nav-element__image
+				image-bg("services-nav_body-wash.png")
+
+		&--dry-cleaning
+			.services-nav-element__image
+				image-bg("services-nav_dry-cleaning.png")
+
+		&--additional-services
+			.services-nav-element__image
+				image-bg("services-nav_additional-services.png")

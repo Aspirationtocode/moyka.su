@@ -4,15 +4,12 @@ import { discounts } from '../../../../data';
 
 const makeDiscount = (price, percent) => {
   if (percent) {
-    return price - Math.round(price * percent / 100);
+    return price - Math.round(price * (percent / 100));
   }
   return price;
 };
 
 class CarInfoSale extends Component {
-  constructor(props) {
-    super(props);
-  }
   render() {
     const { discount, updateCurrentDiscount, active } = this.props;
     const classes = ['sale'];

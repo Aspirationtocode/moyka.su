@@ -26,20 +26,20 @@
     },
     "level2":[
       {
-        "name": "Мойка авто",
-        "link": "https://vk.com/moyka_su"
+        "name": "Комплексная мойка",
+        "link": "./price-list.html#complex-wash"
       },
       {
-        "name": "Наномойка",
-        "link": "https://vk.com/moyka_su"
+        "name": "Мойка кузова",
+        "link": "./price-list.html#body-wash"
       },
       {
         "name": "Химчистка салона",
-        "link": "https://vk.com/moyka_su"
+        "link": "./price-list.html#dry-cleaning"
       },
       {
-        "name": "Устранение запаха в салоне",
-        "link": "https://vk.com/moyka_su"
+        "name": "Дополнительные услуги",
+        "link": "./price-list.html#additional-services"
       }
     ]
   },

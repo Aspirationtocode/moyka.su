@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { findDOMNode } from 'react-dom';
 
 import 'rc-checkbox/assets/index.css';
 import ReactCheckbox from 'rc-checkbox';

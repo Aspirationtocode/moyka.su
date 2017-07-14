@@ -1,3 +1,12 @@
+include ../main-header/main-header
+include ../auto-types/auto-types
+include ../services-nav/services-nav
 mixin section-price-list()
 	.section-price-list
+		+main-header('Прайс-лист')
+		+auto-types()
+		+services-nav()
 		#price-list
+		.section-price-list-warnings
+			.section-price-list-warning • При сильном загрязнении к цене, указанной в прайсе применяется  коэффициент 1,5
+			.section-price-list-warning • Право определения класса автомобиля остаётся за администратором автомойки

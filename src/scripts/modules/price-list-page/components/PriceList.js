@@ -3,68 +3,49 @@ import React, { Component } from 'react';
 import ReactTable from 'react-table';
 import 'react-table/react-table.css';
 
-const columns = [
-  {
-    columns: [
-      {
-        Header: 'First Name',
-        accessor: 'firstName',
-      },
-      {
-        Header: 'Last Name',
-        id: 'lastName',
-        accessor: d => d.lastName,
-      },
-      {
-        Header: 'Age',
-        accessor: 'age',
-      },
-    ],
-  },
-];
+import { generateTableData, generateColumns } from '../generateTableData';
+
+import { priceList } from '../../../../data';
+
+import abbreviations from '../abbreviations';
+
 class PriceList extends Component {
+  constructor() {
+    super();
+    this.renderTable = this.renderTable.bind(this);
+    this.renderTables = this.renderTables.bind(this);
+  }
+  renderTable(sectionTitle) {
+    const columns = generateColumns(sectionTitle);
+    const tableData = generateTableData(priceList[sectionTitle]);
+    return (
+      <ReactTable
+        className={`table table--${abbreviations[sectionTitle]}`}
+        key={sectionTitle}
+        data={tableData}
+        columns={columns}
+        showPaginationBottom={false}
+        defaultPageSize={tableData.length}
+        sortable={false}
+        resizable={false}
+      />
+    );
+  }
+  renderTables() {
+    const tables = [];
+    for (const sectionTitle in priceList) {
+      const currentTable = this.renderTable(sectionTitle);
+      tables.push(currentTable);
+    }
+    return tables;
+  }
   render() {
     return (
       <div className="price-list">
-        <ReactTable
-          data={makeData()}
-          columns={columns}
-          showPaginationBottom={false}
-          sortable={false}
-          resizable={false}
-        />
+        {this.renderTables()}
       </div>
     );
   }
-}
-function makeData() {
-  return [
-    {
-      firstName: 'judge',
-      lastName: 'babies',
-      age: 16,
-    },
-    {
-      firstName: 'quarter',
-      lastName: 'driving',
-      age: 17,
-    },
-    {
-      firstName: 'division',
-      lastName: 'society',
-      age: 3,
-    },
-    {
-      firstName: 'lamp',
-      lastName: 'point',
-      age: 2,
-    },
-    {
-      firstName: 'argument',
-      lastName: 'insurance',
-      age: 13,
-    },
-  ];
 }
 
 export default PriceList;
