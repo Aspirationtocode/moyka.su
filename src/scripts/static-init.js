@@ -8,3 +8,6 @@ import '../views/about-us.pug';
 import '../views/partners.pug';
 import '../views/price-list.pug';
 import '../views/contacts.pug';
+
+import '../static/docs/Прайс ИП Гумбин.pdf';
+import '../static/docs/Прайс ИП Гумбин.docx';

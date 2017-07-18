@@ -28,7 +28,7 @@
 
 	&-logo
 		position absolute
-		top 65px
+		top 93px
 		left 0
 		width calc(210px * 5)
 		height calc(40px * 5)
@@ -74,6 +74,9 @@
 			justify-content center
 
 	&-location
+		display flex
+		flex-direction column
+		text-align right
 		@media screen and (min-width: 740px)
 			opacity 0
 			transform translateY(20px)
@@ -88,18 +91,19 @@
 
 		&__text
 			font-family RobotoCondensedLight
-			font-size 25px
+			font-size 18px
 			color #fff
+			align-self flex-end
+			text-align left
 
 			@media screen and (max-width: 740px)
 				text-align center
+				align-self center
 				margin-bottom 4px
 
 		&__map
 			position relative
-			clear both
 			size(400px, 280px)
-			float right
 			opacity 0
 			transition opacity ease .6s
 			border 3px solid #fff
@@ -133,12 +137,14 @@
 			outline none
 			line-height .8
 			margin-bottom 12px
+			font-size 14px
+			align-self flex-end
 
 			@media screen and (max-width: 740px)
 				float none
 				padding 14px 18px
-				font-size 18px
 				border 2px solid #fff
+				align-self center
 
 			&:hover
 				cursor pointer

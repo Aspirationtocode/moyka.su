@@ -31,6 +31,10 @@
 		justify-content space-around
 		box-sizing border-box
 
+		&:hover
+			.services-nav-element__image
+				filter drop-shadow(4px 4px 10px alpha($main-dark-color, 60%))
+
 		@media screen and (max-width: 860px)
 			flex-basis 50%
 
@@ -56,6 +60,7 @@
 			size(150px)
 			border-radius 50%
 			border 1px solid #eee
+			transition all ease .2s
 
 			@media screen and (max-width: 400px)
 				size(80px)

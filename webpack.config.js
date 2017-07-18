@@ -98,6 +98,10 @@ module.exports = {
         use: isProd ? imageOptimizeConfig : imageOptimizeConfig.slice(0, 1),
       },
       {
+        test: /\.(pdf|doc|docx)$/,
+        use: 'file-loader?name=[name].[ext]&outputPath=docs/',
+      },
+      {
         test: /\.(eot|ttf|woff|woff2)$/,
         use: 'file-loader?name=[name].[ext]&outputPath=fonts/',
       },

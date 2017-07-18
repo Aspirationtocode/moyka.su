@@ -5,3 +5,16 @@
 	&-warnings
 		font-family RobotoCondensedRegular
 		font-size 18px
+		margin-bottom 20px
+
+	&-download-price
+		color $main-color
+		font-family RobotoCondensedBold
+		font-size 20px
+		display inline-block
+		border-bottom 2px solid $main-color
+		transition all ease .3s
+
+		&:hover
+			color lightness($main-color, 40%)
+			border-bottom 2px solid lightness($main-color, 40%)

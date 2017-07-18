@@ -7,9 +7,9 @@ mixin footer(menuElements, isMarginTop)
 				each element, index in menuElements
 					li.footer-nav__element
 						a(href= element.level1.link).footer-nav__link= element.level1.name
-			.footer-telephone
-				.footer-telephone__icon
-				.footer-telephone__number +7-926-159-82-62
+			a(href="mailto:moyka.su@rambler.ru").footer-mail
+				.footer-mail__icon
+				.footer-mail__address moyka.su@rambler.ru
 		.footer-part.footer-part--right
 			a(href="./calculator-service.html#calculator-service").footer-go-calculator
 				.footer-go-calculator__text
