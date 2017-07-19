@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import entries from 'object.entries';
 import assignDeep from 'object-assign-deep';
 
@@ -86,5 +87,11 @@ class ServiceUnits extends Component {
     );
   }
 }
+
+ServiceUnits.propTypes = {
+  group: PropTypes.number.isRequired,
+  priceList: PropTypes.object.isRequired,
+  handlePriceChange: PropTypes.func.isRequired,
+};
 
 export default ServiceUnits;

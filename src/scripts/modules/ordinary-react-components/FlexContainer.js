@@ -34,9 +34,3 @@ FlexContainer.propTypes = {
   justifyContent: propTypes.string,
   flexDirection: propTypes.string,
 };
-
-// Usage example
-// <FlexContainer alignItems='center' justifyContent='center'
-// flexDirection='row-reverse' fullHeight>
-// <div>center</div>
-// </FlexContainer>

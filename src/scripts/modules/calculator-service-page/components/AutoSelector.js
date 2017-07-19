@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 
 import Select from 'react-select';
+
 import 'react-select/dist/react-select.css';
 
 const fromStringsToObjects = array => array.map(element => ({ value: element, label: element }));
@@ -50,5 +52,11 @@ class AutoSelector extends Component {
     );
   }
 }
+
+AutoSelector.propTypes = {
+  type: PropTypes.oneOf(['mark', 'model']),
+  selectData: PropTypes.object.isRequired,
+  handleMarkChange: PropTypes.func,
+};
 
 export default AutoSelector;

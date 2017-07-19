@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 
 import 'rc-checkbox/assets/index.css';
 import ReactCheckbox from 'rc-checkbox';
@@ -56,5 +57,13 @@ class ServiceUnitElement extends Component {
     );
   }
 }
+
+ServiceUnitElement.propTypes = {
+  serviceTitle: PropTypes.string.isRequired,
+  servicePrice: PropTypes.number.isRequired,
+  countableServices: PropTypes.object.isRequired,
+  handleCheckboxChange: PropTypes.func.isRequired,
+  handleCountChange: PropTypes.func.isRequired,
+};
 
 export default ServiceUnitElement;

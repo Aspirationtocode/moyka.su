@@ -60,7 +60,7 @@ class Calculator extends Component {
       const category = categories[group].category;
       return <CarInfo group={group} category={category} price={state.currentPrice} />;
     }
-    return <CarInfo withoutData />;
+    return null;
   }
   renderPriceList() {
     const { state } = this;

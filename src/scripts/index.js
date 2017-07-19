@@ -1,6 +1,7 @@
 import $ from 'jquery';
 import fastclick from 'fastclick';
 import './static-init';
+
 // index-page
 import initHeaderNav from './modules/index-page/init-header-nav';
 import initHeaderElements from './modules/index-page/init-header-elements';

@@ -9,9 +9,11 @@ export default function initHeaderElements() {
   const headerAppear = $('.header__appear');
   const headerLocationButton = $('.header-location__button');
   const headerLocationMap = $('.header-location__map');
+
   animate(800, headerAppear);
   animate(1000, beforeCar, headerLocation, headerLogo);
   animate(2000, afterCar);
+
   headerLocationButton.on('click', () => {
     headerLocationButton.text(
       headerLocationMap.hasClass('active') ? 'Показать на карте' : 'Свернуть карту',
