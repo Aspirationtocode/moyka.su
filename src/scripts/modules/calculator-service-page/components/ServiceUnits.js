@@ -5,8 +5,6 @@ import assignDeep from 'object-assign-deep';
 
 import ServiceUnitElement from './ServiceUnitElement';
 
-import { countableServices } from '../../../../data';
-
 class ServiceUnits extends Component {
   constructor(props) {
     super(props);

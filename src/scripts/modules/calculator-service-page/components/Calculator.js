@@ -35,7 +35,6 @@ class Calculator extends Component {
   }
   handleServiceSelect(serviceTitle, checked) {
     const { state } = this;
-    console.log(state);
     if (checked) {
       this.setState({
         selectedServices: [...state.selectedServices, serviceTitle],
@@ -98,7 +97,6 @@ class Calculator extends Component {
   renderCarInfo() {
     const { state } = this;
     if (state.currentCarDetails) {
-      const { mark, model } = state.currentCarDetails;
       const group = state.currentGroup;
       const category = categories[group].category;
       return <CarInfo group={group} category={category} price={state.currentPrice} />;
@@ -108,7 +106,6 @@ class Calculator extends Component {
   renderPriceList() {
     const { state } = this;
     if (state.currentCarDetails) {
-      const { mark, model } = state.currentCarDetails;
       const group = state.currentGroup;
       const currentPriceList = {};
       for (const key in priceList) {
@@ -119,7 +116,6 @@ class Calculator extends Component {
   renderServiceUnits() {
     const { state } = this;
     if (state.currentCarDetails) {
-      const { mark, model } = state.currentCarDetails;
       const group = state.currentGroup;
       return (
         <ServiceUnits
