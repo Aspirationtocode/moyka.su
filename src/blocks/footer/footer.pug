@@ -5,7 +5,7 @@ mixin footer(menuElements, isMarginTop)
 		.footer-part.footer-part--left
 			nav.footer-nav
 				each element, index in menuElements
-					li.footer-nav__element
+					li(class=`footer-nav__element footer-nav__element--${index + 1}s`)
 						a(href= element.level1.link).footer-nav__link= element.level1.name
 			a(href="mailto:moyka.su@rambler.ru").footer-mail
 				.footer-mail__icon
@@ -23,7 +23,7 @@ mixin footer(menuElements, isMarginTop)
 			.footer-social
 				a(href="http://vk.com").footer-social__icon.footer-social__icon--instagram
 				a(href="https://vk.com/moyka_su").footer-social__icon.footer-social__icon--vk
-			.footer-rights © 2017 Официальный сайт МОЙКА.su. Все права защищены.
 			.footer-creator-info
 				.footer-creator-info__text Сайт создан
 				a(href="https://vk.com/aspiretocode").footer-creator-info__link @aspiretocode
+			.footer-rights © 2017 Официальный сайт МОЙКА.su. Все права защищены.

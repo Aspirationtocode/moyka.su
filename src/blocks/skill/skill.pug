@@ -1,10 +1,10 @@
-mixin skill(header, text, sum, imageModificator)
+mixin skill(header, text, sum, modificator, serviceTitle)
 	.skill
 		.skill__header= header
 			.skill-header-helper.skill-header-helper--left
 			.skill-header-helper.skill-header-helper--right
 		.skill__text= text
-		div(class=`skill-image skill-image--${imageModificator}`)
+		div(class=`skill-image skill-image--${modificator}`)
 		.skill-info
 			.skill-info__sum От #{sum} ₽
-			button.skill-info__button Подробнее
+			button(class=`skill-info__button skill-info__button--${modificator}` data-remodal-target=`skill-modal--${serviceTitle}`) Подробнее

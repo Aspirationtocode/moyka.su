@@ -5,6 +5,7 @@ import './static-init';
 // index-page
 import initHeaderNav from './modules/index-page/init-header-nav';
 import initHeaderElements from './modules/index-page/init-header-elements';
+import initSectionSkills from './modules/index-page/init-section-skills';
 
 // calculator-service-page
 import initServicePage from './modules/calculator-service-page/';
