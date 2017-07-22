@@ -41,6 +41,7 @@
   },
   "dependencies": {
     "array-from": "^2.1.1",
+    "array-includes": "^3.0.3",
     "fastclick": "^1.0.6",
     "get-viewport-size": "^2.0.0",
     "jquery": "^3.2.1",

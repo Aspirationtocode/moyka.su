@@ -32,6 +32,7 @@ const pageConformity = {
 
 const currentPageClass = $(document.body).attr('class');
 
+// for all pages
 initHeaderNav();
 initHeaderElements();
 

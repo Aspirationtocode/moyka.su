@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import includes from 'array-includes';
 
 import 'rc-checkbox/assets/index.css';
 import ReactCheckbox from 'rc-checkbox';
@@ -12,7 +13,7 @@ import { checkOnCountAbility } from '../../../helpers';
 class ServiceUnitElement extends Component {
   render() {
     const { props } = this;
-    const { serviceTitle, servicePrice } = props;
+    const { serviceTitle, servicePrice, selectedServices } = props;
     return (
       <div className="service-unit-element">
         <div className="service-unit-left-part">
@@ -27,6 +28,7 @@ class ServiceUnitElement extends Component {
                     : servicePrice,
                 );
               }}
+              checked={includes(selectedServices, serviceTitle)}
               className="service-unit-element__checkbox"
             />
             <div className="service-unit-element__text">{serviceTitle}</div>

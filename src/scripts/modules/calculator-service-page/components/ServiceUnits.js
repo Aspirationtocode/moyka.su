@@ -15,17 +15,19 @@ class ServiceUnits extends Component {
     this.handleCheckboxChange = this.handleCheckboxChange.bind(this);
     this.handleCountChange = this.handleCountChange.bind(this);
     this.state = {
-      countableServices,
+      countableServices: props.countableServices,
     };
   }
   handleCountChange(serviceTitle, servicePrice, multiplier) {
     const { state, props } = this;
     const isPriceIncreases = state.countableServices[serviceTitle].multiplier < multiplier;
-    this.setState({
-      countableServices: assignDeep({}, state.countableServices, {
-        [serviceTitle]: { multiplier },
-      }),
+    const newCountableServices = assignDeep({}, state.countableServices, {
+      [serviceTitle]: { multiplier },
     });
+    this.setState({
+      countableServices: newCountableServices,
+    });
+    props.handleCountableServicesChange(newCountableServices);
     if (state.countableServices[serviceTitle].checked) {
       props.handlePriceChange(isPriceIncreases ? servicePrice : -servicePrice);
     }
@@ -33,23 +35,27 @@ class ServiceUnits extends Component {
   handleCheckboxChange(e, serviceTitle, servicePrice) {
     const { props, state } = this;
     const { checked } = e.target;
+    props.handleServiceSelect(serviceTitle, checked);
     if (state.countableServices[serviceTitle]) {
+      const newCountableServices = assignDeep({}, state.countableServices, {
+        [serviceTitle]: { checked },
+      });
+      props.handleCountableServicesChange(newCountableServices);
       this.setState({
-        countableServices: assignDeep({}, state.countableServices, {
-          [serviceTitle]: { checked },
-        }),
+        countableServices: newCountableServices,
       });
     }
     const value = checked ? servicePrice : -servicePrice;
     props.handlePriceChange(value);
   }
   renderUnit(unit) {
-    const { state } = this;
+    const { state, props } = this;
     const header = entries(unit)[0][1];
     const services = entries(unit).slice(1).map((service, index) => {
       const [serviceTitle, servicePrice] = [service[0], service[1]];
       return (
         <ServiceUnitElement
+          selectedServices={props.selectedServices}
           key={index}
           serviceTitle={serviceTitle}
           servicePrice={servicePrice}
@@ -73,7 +79,7 @@ class ServiceUnits extends Component {
       const currentUnit = {};
       currentUnit.header = key;
       for (const [innerKey, innerValue] of entries(value)) {
-        currentUnit[innerKey] = innerValue[group];
+        currentUnit[innerKey] = innerValue[group - 1];
       }
       currentPriceList.push(this.renderUnit(currentUnit));
     }
