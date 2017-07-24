@@ -1,48 +1,15 @@
 include ../main-header/main-header
 include ../main-subheader/main-subheader
 include ../skill/skill
+include ../skills-modal-contents/skills-modal-contents
 mixin section-skills()
 	SECTION.section-skills
-		.remodal(data-remodal-id='skill-modal--body-wash')
-			button.remodal-close(data-remodal-action='close')
-			h1 Remodal
-			p
-				| Responsive, lightweight, fast, synchronized with CSS animations, fully customizable modal window plugin with declarative configuration and hash tracking.
-			br
-			button.remodal-cancel(data-remodal-action='cancel') Cancel
-			button.remodal-confirm(data-remodal-action='confirm') OK
-
-		.remodal(data-remodal-id='skill-modal--dry-cleaning')
-			button.remodal-close(data-remodal-action='close')
-			h1 Remodal
-			p
-				| Responsive, lightweight, fast, synchronized with CSS animations, fully customizable modal window plugin with declarative configuration and hash tracking.
-			br
-			button.remodal-cancel(data-remodal-action='cancel') Cancel
-			button.remodal-confirm(data-remodal-action='confirm') OK
-
-		.remodal(data-remodal-id='skill-modal--nano-wash')
-			button.remodal-close(data-remodal-action='close')
-			h1 Remodal
-			p
-				| Responsive, lightweight, fast, synchronized with CSS animations, fully customizable modal window plugin with declarative configuration and hash tracking.
-			br
-			button.remodal-cancel(data-remodal-action='cancel') Cancel
-			button.remodal-confirm(data-remodal-action='confirm') OK
-
-		.remodal(data-remodal-id='skill-modal--additional-services')
-			button.remodal-close(data-remodal-action='close')
-			h1 Remodal
-			p
-				| Responsive, lightweight, fast, synchronized with CSS animations, fully customizable modal window plugin with declarative configuration and hash tracking.
-			br
-			button.remodal-cancel(data-remodal-action='cancel') Cancel
-			button.remodal-confirm(data-remodal-action='confirm') OK
-
+		+skills-modal-contents()
 		+main-header("Круглосуточная мойка")
 		+main-subheader("Услуги")
 		.section-skills__container
-			+skill("Мойка кузова", "Наши квалифицированные специалисты как следует позаботятся о чистоте Вашего автомобиля", 300, "1s", 'body-wash')
-			+skill("Химчистка салона", "Наши квалифицированные специалисты как следует позаботятся о чистоте Вашего автомобиля", 800, "2s", 'dry-cleaning')
-			+skill("Наномойка", "Наши квалифицированные специалисты как следует позаботятся о чистоте Вашего автомобиля", 450, "3s", 'nano-wash')
-			+skill("Дополнительные услуги", "Наши квалифицированные специалисты как следует позаботятся о чистоте Вашего автомобиля", 300, "4s", 'additional-services')
+			- const text = "Наши специалисты позаботятся о чистоте Вашего автомобиля"
+			+skill("Мойка кузова", text, 300, "1s", 'body-wash')
+			+skill("Химчистка салона", text, 800, "2s", 'dry-cleaning')
+			+skill("Наномойка", text, 450, "3s", 'nano-wash')
+			+skill("Доп. услуги", text, 300, "4s")

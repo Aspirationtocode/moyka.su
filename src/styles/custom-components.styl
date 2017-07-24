@@ -1,5 +1,4 @@
 // Select component styles
-
 $select-black-color = alpha($main-color, 95%)
 
 .select-custom
@@ -49,7 +48,6 @@ $select-black-color = alpha($main-color, 95%)
 		color #fff
 
 // Checkbox component styles
-
 .service-unit-element__checkbox
 	margin-right 12px
 	position static !important
@@ -79,7 +77,6 @@ $select-black-color = alpha($main-color, 95%)
 				left 6px
 
 // in-development block styles
-
 .in-development
 	position relative
 	height 360px
@@ -104,7 +101,6 @@ $select-black-color = alpha($main-color, 95%)
 		filter grayscale(100%)
 
 // ReactTable component styles
-
 .react-numeric-input
 	z-index 10000
 	position relative
@@ -112,5 +108,19 @@ $select-black-color = alpha($main-color, 95%)
 .ReactTable
 	color $main-dark-color
 
+// remodal styles
 .remodal-wrapper
 	overflow hidden
+
+.remodal
+	padding 0 !important
+	max-width 65% !important
+
+	@media screen and (max-width: 1600px)
+		max-width 75% !important
+
+	@media screen and (max-width: 1200px)
+		max-width 90% !important
+
+.remodal-cancel
+	background-color $main-color !important

@@ -1,4 +1,4 @@
-$gray-color = #B1AAAA
+$gray-color = #676767
 $big-gap = 30px
 $medium-gap = 20px
 $small-gap = 10px
@@ -10,7 +10,7 @@ $helper-width-negative = -4px
 	border 1px solid alpha(#777, 10%)
 	padding 20px 0
 	box-sizing border-box
-	background-color #E3E3E3
+	background-color rgba(46,187,223,0.085)
 	box-shadow 10px 10px 18px alpha(#999, 30%)
 	border-radius 16px
 	flex-grow 1
@@ -20,7 +20,6 @@ $helper-width-negative = -4px
 
 	&:hover
 		cursor pointer
-		transform scale(1.01)
 
 	&:first-child
 		margin-left 0
@@ -71,7 +70,7 @@ $helper-width-negative = -4px
 	&__header
 		margin-bottom 10px
 		position relative
-		background-color $gray-color
+		background-color $main-color
 		font-family RobotoCondensedBold
 		font-size 27px
 		padding 10px 12px
@@ -161,7 +160,7 @@ $helper-width-negative = -4px
 		background-color #fff
 		padding 10px 14px
 		box-sizing border-box
-		border 1px solid alpha(#93A5B1, 60%)
+		border 1px solid alpha($main-color, 40%)
 		border-left none
 		border-right none
 
@@ -174,13 +173,15 @@ $helper-width-negative = -4px
 				font-size 22px
 
 		&__button
-			background-color $gray-color
-			border 3px solid #9A9A9A
+			background-color #fff
+			border 3px solid $main-color
 			padding 6px 26px
 			border-radius 40px
-			color #fff
+			color $main-color
 			transition all ease .2s
 			outline none
+			font-family RobotoCondensedRegular
+			font-size 17px
 
 			@media screen and (max-width: 1400px)
 				padding 6px 18px
@@ -189,14 +190,14 @@ $helper-width-negative = -4px
 				padding 2px 14px
 
 			&:hover
-				background-color #fff
-				color #9A9A9A
+				background-color $main-color
+				color #fff
 
 
 .skill-header-helper
 	position absolute
 	top 0
-	background-color $gray-color
+	background-color $main-color
 	width $helper-width
 	height 100%
 
@@ -207,7 +208,7 @@ $helper-width-negative = -4px
 			left 0
 			top -7px
 			content ""
-			triangle(4px, 7px, "bottomRight", $gray-color)
+			triangle(4px, 7px, "bottomRight", $main-color)
 
 
 	&--right
@@ -218,4 +219,4 @@ $helper-width-negative = -4px
 			top -7px
 			content ""
 			transform rotate(180deg)
-			triangle(4px, 7px, "topRight", $gray-color)
+			triangle(4px, 7px, "topRight", $main-color)

@@ -7,4 +7,7 @@ mixin skill(header, text, sum, modificator, serviceTitle)
 		div(class=`skill-image skill-image--${modificator}`)
 		.skill-info
 			.skill-info__sum От #{sum} ₽
-			button(class=`skill-info__button skill-info__button--${modificator}` data-remodal-target=`skill-modal--${serviceTitle}`) Подробнее
+			- if (serviceTitle)
+				button(class=`skill-info__button skill-info__button--${modificator}` data-remodal-target=`skill-modal--${serviceTitle}`) Подробнее
+			- else
+				a(class=`skill-info__button skill-info__button--${modificator}` href="./price-list.html#additional-services") Подробнее

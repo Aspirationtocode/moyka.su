@@ -1,0 +1,45 @@
+.modal-content
+	text-align left
+	hyphens auto
+	max-height 80vh
+	overflow-y auto
+	padding 35px
+	font-size 19px
+	font-family RobotoCondensedRegular
+	color $main-dark-color
+
+	p
+		text-align justify
+
+	a
+		color $main-dark-color
+		padding 1px 0
+		border-bottom 1px solid $main-dark-color
+		transition color ease .2s
+
+		&:hover
+			color $main-color
+			border-bottom 1px solid $main-color
+	ul
+		@media screen and (min-width: 600px)
+			margin-left 30px
+
+		li
+			font-weight bold
+			*
+				font-weight normal
+				@media screen and (min-width: 600px)
+					margin-left 30px
+
+	h1, h2
+		margin-bottom 3px
+
+	h3
+		margin-top 3px
+
+	ol
+		@media screen and (min-width: 600px)
+			padding-left 30px
+
+		li
+			list-style-type decimal

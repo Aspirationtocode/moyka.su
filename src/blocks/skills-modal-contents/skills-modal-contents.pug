@@ -1,0 +1,16 @@
+include ./modals/skill-modal--body-wash
+include ./modals/skill-modal--dry-cleaning
+include ./modals/skill-modal--nano-wash
+
+mixin skills-modal-contents()
+	- const modals = ['skill-modal--body-wash', 'skill-modal--dry-cleaning', 'skill-modal--nano-wash']
+	.skills-modal-contents
+		each modal in modals
+			.remodal(data-remodal-id=modal)
+				case modal
+					when 'skill-modal--body-wash'
+						+skill-modal--body-wash()
+					when 'skill-modal--dry-cleaning'
+						+skill-modal--dry-cleaning()
+					when 'skill-modal--nano-wash'
+						+skill-modal--nano-wash()
