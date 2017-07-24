@@ -6,8 +6,8 @@ mixin section-contacts()
 			| Наш адрес:
 			span.section-contacts-value г.Москва г.Троицк Калужское шоссе д. 38
 		.section-contacts-key
-			| Наш телефон:
-			span.section-contacts-value +7-926-159-82-62
+			| Наш e-mail:
+			a.section-contacts-value(href="mailto:moyka.su@rambler.ru") moyka.su@rambler.ru
 		.section-contacts-key
 			| Часы работы:
 			span.section-contacts-value 7:00 — 01:00 (В любое другое время по предварительной записи)
@@ -15,4 +15,4 @@ mixin section-contacts()
 			| Мы на карте:
 			span.section-contacts-value
 				script(type='text/javascript', charset='utf-8', async='', src='https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3A28af424dd343bf904005ada8659098d357c84475aceb81967c05bfb680d80dbb&width=100%&height=100%&lang=ru_RU&scroll=true')
-		a(href="./index.html" name="address").section-contacts-logo
+		a(href="./index.html").section-contacts-logo

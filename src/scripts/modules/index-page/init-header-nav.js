@@ -21,9 +21,11 @@ export default function initHeaderNav() {
   });
 
   for (let i = 0; i < $('.header-nav__element--with-dot').length; i++) {
-    $(`.header-nav__element--${i + 1}s`).on('click', () => {
-      $('.header-nav__element--with-dot').removeClass('header-nav__element--active');
-      $(`.header-nav__element--${i + 1}s`).toggleClass('header-nav__element--active');
+    const activeClass = 'header-nav__element--active';
+    const currentHeaderNavElement = $(`.header-nav__element--${i + 1}s`);
+    currentHeaderNavElement.on('click', () => {
+      $('.header-nav__element--with-dot').removeClass(activeClass);
+      currentHeaderNavElement.toggleClass(activeClass);
     });
   }
 

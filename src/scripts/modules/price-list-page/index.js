@@ -4,29 +4,22 @@ import $ from 'jquery';
 
 import PriceList from './components/PriceList';
 
-function goToSection(section) {
-  $('html, body').animate(
-    {
-      scrollTop: section.offset().top,
-    },
-    300,
-  );
-}
+import { goToElement, getHashText } from '../../helpers';
 
 function initStuff() {
   $('.services-nav-element').on('click', function () {
     const currentSection = $(this).attr('class').split(' ')[1].slice(22);
     const sectionToGo = $(`.table--${currentSection}`);
-    goToSection(sectionToGo);
+    goToElement(sectionToGo);
   });
 
   if (location.hash) {
-    const sectionToGo = $(`.table--${location.hash.slice(1)}`);
-    goToSection(sectionToGo);
+    const sectionToGo = $(`.table--${getHashText()}`);
+    goToElement(sectionToGo);
   }
   $('.header-nav-dropdown__link').on('click', () => {
-    const sectionToGo = $(`.table--${location.hash.slice(1)}`);
-    goToSection(sectionToGo);
+    const sectionToGo = $(`.table--${getHashText()}`);
+    goToElement(sectionToGo);
   });
 }
 

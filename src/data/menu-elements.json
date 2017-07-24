@@ -46,7 +46,7 @@
   {
     "level1":{
       "name": "Цены",
-      "link": "./calculator-service.html#calculator-service"
+      "link": "./price-list.html"
     },
     "level2":[
       {
@@ -114,7 +114,7 @@
   {
     "level1":{
       "name": "Контакты",
-      "link": "./contacts.html#address"
+      "link": "./contacts.html#contacts"
     }
   }
 ]

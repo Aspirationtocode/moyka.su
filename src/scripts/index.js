@@ -13,6 +13,10 @@ import initServicePage from './modules/calculator-service-page/';
 // price-list-page
 import initPriceListPage from './modules/price-list-page';
 
+// contacts-page
+import initContactsPage from './modules/contacts-page';
+
+// main-init-scripts
 fastclick.attach(document.body);
 
 $(window).on('load', () => {
@@ -21,19 +25,24 @@ $(window).on('load', () => {
   });
 });
 
+// page-conformity
 const pageConformity = {
   'index-page': function () {},
   'calculator-service-page': function () {
     initServicePage();
   },
-  'price-list': function () {
+  'price-list-page': function () {
     initPriceListPage();
+  },
+  'contacts-page': function () {
+    initContactsPage();
   },
 };
 
+// get body class on the page
 const currentPageClass = $(document.body).attr('class');
 
-// for all pages
+// scripts for all pages
 initHeaderNav();
 initHeaderElements();
 

@@ -42,6 +42,10 @@
   "dependencies": {
     "array-from": "^2.1.1",
     "array-includes": "^3.0.3",
+    "babel-plugin-transform-react-constant-elements": "^6.23.0",
+    "babel-plugin-transform-react-inline-elements": "^6.22.0",
+    "babel-plugin-transform-react-remove-prop-types": "^0.4.6",
+    "babel-plugin-transform-runtime": "^6.23.0",
     "fastclick": "^1.0.6",
     "get-viewport-size": "^2.0.0",
     "jquery": "^3.2.1",
