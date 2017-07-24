@@ -8,6 +8,9 @@
 	font-family RobotoCondensedRegular
 	color $main-dark-color
 
+	@media screen and (max-width: 560px)
+		padding 25px
+
 	p
 		text-align justify
 
@@ -21,8 +24,7 @@
 			color $main-color
 			border-bottom 1px solid $main-color
 	ul
-		@media screen and (min-width: 600px)
-			margin-left 30px
+		margin-left 30px
 
 		li
 			font-weight bold
@@ -38,8 +40,7 @@
 		margin-top 3px
 
 	ol
-		@media screen and (min-width: 600px)
-			padding-left 30px
+		padding-left 30px
 
 		li
 			list-style-type decimal
