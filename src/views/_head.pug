@@ -1,19 +1,20 @@
-head
-	meta(charset='utf-8')
-	meta(name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no')
-	meta(http-equiv='X-UA-Compatible' content='IE=edge')
+mixin head(description, keywords)
+	head
+		meta(charset='utf-8')
+		meta(name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0')
+		meta(http-equiv='X-UA-Compatible' content='IE=edge')
+		meta(name="robots" content="index, follow")
+		meta(name='imagetoolbar' content='no')
+		meta(name='msthemecompatible' content='no')
+		meta(name='cleartype' content='on')
+		meta(name='HandheldFriendly' content='True')
+		meta(name='google' value='notranslate')
+		link(rel="icon" type="image/png" href="./images/favicon.png")
+		meta(name='description' content= description)
+		meta(name='keywords' content= keywords)
+		style.
+			body {
+				visibility: hidden;
+			}
 
-	meta(name='imagetoolbar' content='no')
-	meta(name='msthemecompatible' content='no')
-	meta(name='cleartype' content='on')
-	meta(name='HandheldFriendly' content='True')
-	meta(name='google' value='notranslate')
-	link(rel="icon" type="image/png" href="./images/favicon.png")
-	meta(name='description' content='')
-	meta(name='keywords' content='')
-	style.
-		body {
-			visibility: hidden;
-		}
-
-	block head
+		block head

@@ -105,6 +105,14 @@ module.exports = {
         test: /\.(eot|ttf|woff|woff2)$/,
         use: 'file-loader?name=[name].[ext]&outputPath=fonts/',
       },
+      {
+        test: /\.(txt|xml)$/,
+        use: 'file-loader?name=[name].[ext]&outputPath=/',
+      },
+      {
+        test: /\.htaccess$/,
+        use: 'file-loader?name=.htaccess&outputPath=/',
+      },
     ],
   },
   devServer: {

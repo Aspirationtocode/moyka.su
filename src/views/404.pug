@@ -1,15 +1,11 @@
 include ../blocks/header/header
 include ../blocks/footer/footer
-include ./_in-development
 - const {menuElements, title} = htmlWebpackPlugin.options;
 doctype html
 html(lang='ru')
 	include ./_head
 	+head()
 	title= title
-	body.accumulations-page
-		- const name = "Скидки и акции"
-		block content
+	body.page-404
 		+header(name, menuElements)
-		+in-development(name)
 		+footer(menuElements, true)

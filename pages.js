@@ -60,6 +60,10 @@ const pagesData = [
     title: 'Контакты',
     filename: 'contacts',
   },
+  {
+    title: '404 Страница не найдена',
+    filename: '404',
+  },
 ];
 
 const pages = pagesData.map((page) => {
